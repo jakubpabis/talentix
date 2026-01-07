@@ -1,0 +1,73 @@
+{
+	"version": 2,
+	"styles": {
+		"elements": {
+			"link": {
+				"typography": {
+					"textDecoration": false
+				}
+			}
+		}
+	},
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"name": "Black",
+					"slug": "black",
+					"color": "#000000"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#FFFFFF"
+				},
+				{
+					"name": "Primary",
+					"slug": "primary",
+					"color": "#183152"
+				},
+				{
+					"name": "Secondary",
+					"slug": "secondary",
+					"color": "#94D4E9"
+				},
+				{
+					"name": "Tertiary",
+					"slug": "tertiary",
+					"color": "#C4E2EC"
+				},
+				{
+					"name": "Quaternary",
+					"slug": "quaternary",
+					"color": "#FDD963"
+				},
+				{
+					"name": "Success",
+					"slug": "success",
+					"color": "#48C353"
+				},
+				{
+					"name": "Warning",
+					"slug": "warning",
+					"color": "#ec6278"
+				},
+				{
+					"name": "Danger",
+					"slug": "danger",
+					"color": "#e70000"
+				},
+				{
+					"name": "Light",
+					"slug": "light",
+					"color": "#f0f0f0"
+				},
+				{
+					"name": "Dark",
+					"slug": "dark",
+					"color": "#1b1b1b"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/hero",
+	"title": "Hero",
+	"description": "Designed to be the first block on a page. Perfect container for a page title and a page description.",
+	"style": "blennder/hero",
+	"script": "blennder/hero",
+	"category": "components",
+	"keywords": [
+		"hero"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

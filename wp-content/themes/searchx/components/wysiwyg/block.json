@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/wysiwyg",
+	"title": "WYSIWYG",
+	"description": "'What you see is what you get' - Renders plain text and HTML. Can contain links, lists, etc.",
+	"style": "blennder/wysiwyg",
+	"script": "blennder/wysiwyg",
+	"category": "components",
+	"keywords": [
+		"wysiwyg"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

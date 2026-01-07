@@ -1,0 +1,39 @@
+.DS_Store
+
+#Node Modules Folder
+node_modules/
+
+# Ignore everything in the root except the "wp-content" directory.
+/*
+!.gitignore
+!.github
+!.gitattributes
+!.stylelintrc
+!.stylelintignore
+!.npmrc
+!CHANGELOG.md
+!package.json
+!package-lock.json
+!webpack.mix.js
+!README.md
+!robots.txt
+!wp-content/
+!.eslintrc.json
+!.github
+!.editorconfig
+!composer.json
+!composer.lock
+!config.yml
+
+# Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
+wp-content/*
+!wp-content/themes/
+
+# Ignore everything in the "themes" directory, except the themes you specify
+wp-content/themes/*
+!wp-content/themes/searchx/
+wp-content/themes/searchx/dist
+wp-content/themes/searchx/vendor
+
+#SASS
+wp-content/themes/searchx/*.map

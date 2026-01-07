@@ -1,0 +1,35 @@
+// Component Default Padding
+$component-py-lg: rem(70);
+$component-py-md: rem(60);
+$component-py-sm: rem(50);
+$component-py-xs: rem(40);
+
+$content_max_width: rem(900);
+
+// Header Variables
+
+// layout
+$header_breakpoint_desktop: 1200px; // this value is also used in header.js for breakpoint
+$header_breakpoint_mobile: 1199px;
+$header_logo_maxwidth: 300px;
+$header_container_maxwidth: 1370px;
+$header_container_width: calc(100% - 20px);
+$header_container_width_mobile: 100%;
+$header_desktop_submenu_width: 250px;
+$header_desktop_submenu_mega_padding_y: 20px;
+$header_desktop_submenu_mega_padding_x: calc(
+	(50% - (0.5 * $header_container_maxwidth)) + $header_logo_maxwidth
+);
+
+// header styles
+$header_desktop_link_color: var(--bs-black);
+$header_desktop_link_color_active: var(--bs-primary);
+$header_desktop_submenu_bg: var(--bs-white);
+$header_mobile_link_color: var(--bs-black);
+$header_mobile_bg: var(--bs-white);
+$header_link_current_after_color: var(--bs-tertiary);
+$header_link_padding: 27px 15px 24px;
+
+// preheader styles
+$preheader_bg: darken(#183152, 7%);
+$preheader_color: var(--bs-white);

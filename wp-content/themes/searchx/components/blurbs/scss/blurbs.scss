@@ -1,0 +1,40 @@
+/************
+ *
+ * Blurb Styles
+ *
+ ***********/
+
+@import '@/importer';
+
+.blurbs {
+
+	&__card {
+		background-color: var( --bs-white );
+		border-radius: var( --bs-border-radius );
+		box-shadow: var( --bs-box-shadow );
+		padding: calc( 1.5 * $spacer );
+	}
+
+	&__body {
+		background-color: transparent;
+		color: var( --bs-dark );
+		padding: 0;
+	}
+
+	&__title {
+		font-size: $h5-font-size;
+	}
+
+	&__graphic {
+		margin-bottom: 2rem;
+		width: rem( 40 );
+		height: rem( 40 );
+	}
+
+	&__link {
+		align-items: center;
+		display: inline-flex;
+		font-size: $font-size-sm;
+	}
+
+}

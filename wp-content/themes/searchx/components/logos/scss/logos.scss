@@ -1,0 +1,67 @@
+/************
+ *
+ * Logo Scroller Styles
+ *
+ ***********/
+
+@import "@/importer";
+
+.logos {
+	.swiper-wrapper {
+		transition-timing-function: linear !important;
+		padding-bottom: 0;
+	}
+
+	.swiper-slide {
+		@include media-breakpoint-down(lg) {
+			padding: 0 10px !important;
+		}
+	}
+
+	.swiper-slide-prev,
+	.swiper-slide-partial {
+		opacity: 1;
+	}
+
+	&[data-bs-theme="dark"] {
+		.logos__card {
+			background-color: var(--bs-white);
+			@include notch_tr(24px);
+		}
+	}
+
+	&__card {
+		align-items: center;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		display: flex;
+		justify-content: center;
+		min-height: 100%;
+		padding: rem(24) 0;
+		text-align: center;
+	}
+
+	&__image {
+		border-radius: 0;
+		transition: filter 0.5s;
+		width: auto;
+
+		@include media-breakpoint-down(md) {
+			max-height: 100px;
+			max-width: 200px;
+		}
+		@include media-breakpoint-down(sm) {
+			max-height: 80px;
+			max-width: 140px;
+		}
+		@include media-breakpoint-up(md) {
+			max-height: 100px;
+			max-width: 200px;
+		}
+	}
+
+	&__header {
+		margin-bottom: 0;
+	}
+}

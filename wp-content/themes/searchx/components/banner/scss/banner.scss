@@ -1,0 +1,47 @@
+/************
+ *
+ * Cards Styles
+ *
+ ***********/
+
+@import "@/importer";
+
+.banner {
+	&.component {
+		@include media-breakpoint-down(lg) {
+			padding-top: 10rem !important;
+			img {
+				object-position: bottom center;
+			}
+		}
+	}
+
+	&__col {
+		&.component__header {
+			margin-bottom: 0;
+		}
+	}
+
+	&__content {
+		& > * {
+			margin: 0 0 1.66rem 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__shape {
+		position: absolute;
+		width: 40%;
+		height: 125%;
+		z-index: 0;
+		top: -25%;
+		&.left {
+			clip-path: polygon(0 100%, 0 0, 100% 100%);
+		}
+		&.right {
+			clip-path: polygon(0 100%, 100% 0, 100% 100%);
+		}
+	}
+}

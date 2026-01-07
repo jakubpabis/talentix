@@ -1,0 +1,254 @@
+/************
+ *
+ * Tabs Styles
+ *
+ ***********/
+
+@import "@/importer";
+
+.tabs {
+	$this: &;
+
+	&__link {
+		display: flex;
+		align-items: center;
+	}
+
+	&[data-bs-theme="dark"] {
+		.nav-tabs {
+			.nav-item {
+				.nav-link {
+					color: var(--bs-light);
+
+					&:not(.active) {
+						border-color: var(--bs-light);
+					}
+				}
+			}
+		}
+	}
+
+	#{$this}__col {
+		#{$this}__menu {
+			margin-bottom: 3rem;
+
+			@include media-breakpoint-up(md) {
+				margin-bottom: 5rem;
+			}
+
+			#{$this}__nav {
+				flex-wrap: nowrap;
+			}
+		}
+
+		#{$this}__panels {
+			#{$this}__panel-content {
+				display: flex;
+				justify-content: space-between;
+				margin-top: auto;
+				margin-bottom: auto;
+				flex-wrap: wrap;
+
+				@include media-breakpoint-up(md) {
+					flex-wrap: nowrap;
+				}
+
+				#{$this}__panel-image-wrapper {
+					max-height: rem(200);
+
+					@include media-breakpoint-up(md) {
+						flex-basis: 70%;
+						max-height: rem(300);
+					}
+				}
+
+				#{$this}__panel-image {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+					border-radius: var(--bs-border-radius);
+					box-shadow: var(--bs-box-shadow);
+				}
+			}
+		}
+	}
+
+	&--top {
+		.nav-tabs {
+			margin: 0 calc($grid-gutter-width / 2 * -1);
+			.nav-item {
+				padding: 0 calc($grid-gutter-width / 2);
+				.nav-link {
+					text-align: center;
+					width: 100%;
+				}
+			}
+			@include media-breakpoint-down(lg) {
+				margin: 0 calc($grid-gutter-width / 4 * -1);
+				.nav-item {
+					padding: 0 calc($grid-gutter-width / 4);
+				}
+			}
+		}
+	}
+
+	&--left {
+		#{$this}__col:not(.component__header) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		#{$this}__col {
+			#{$this}__menu {
+				width: 100%;
+
+				@include media-breakpoint-up(md) {
+					margin-bottom: 0;
+					padding-right: 2rem;
+					flex-basis: 30%;
+				}
+			}
+
+			#{$this}__panels {
+				@include media-breakpoint-up(md) {
+					flex-basis: 70%;
+				}
+			}
+		}
+
+		#{$this}__nav {
+			@include media-breakpoint-up(md) {
+				display: flex;
+				flex-direction: column;
+				align-items: baseline;
+
+				.nav-item:not(:last-of-type) {
+					margin-bottom: 3rem;
+				}
+
+				.nav-link {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}
+
+// Works best with bootstrap variables if its not nexted inside another class
+.nav-tabs {
+	border: none;
+	align-items: flex-end;
+
+	@include media-breakpoint-down(sm) {
+		flex-direction: column;
+		margin: 0 !important;
+		border-radius: var(--bs-border-radius-md);
+		background-color: var(--bs-gray-100);
+		overflow: hidden;
+
+		&.open {
+			.nav-item {
+				.nav-link {
+					border-radius: 0;
+				}
+				&:first-of-type {
+					.nav-link {
+						border-top-left-radius: var(--bs-border-radius-md);
+						border-top-right-radius: var(--bs-border-radius-md);
+					}
+				}
+				&:last-of-type {
+					.nav-link {
+						border-bottom-left-radius: var(--bs-border-radius-md);
+						border-bottom-right-radius: var(--bs-border-radius-md);
+					}
+				}
+			}
+		}
+	}
+
+	.nav-item {
+		display: block;
+		width: 100%;
+
+		@include media-breakpoint-down(sm) {
+			position: relative;
+			padding: 0 !important;
+			order: 9;
+			&.active {
+				order: 1;
+			}
+		}
+
+		.nav-link {
+			line-height: 1;
+			font-weight: $font-weight-semibold;
+			font-size: var(--bs-font-size-h6);
+			color: rgba(var(--bs-dark-rgb), 0.5);
+			padding-bottom: 1.5rem;
+			border-bottom: 5px solid rgba(var(--bs-dark-rgb), 0.5);
+			border-top-width: 0;
+			border-right-width: 0;
+			border-left-width: 0;
+			display: block;
+
+			&.active {
+				color: var(--bs-black);
+				border-bottom: 5px solid var(--bs-primary);
+			}
+
+			@include media-breakpoint-down(lg) {
+				padding-bottom: 1rem;
+				padding-left: 0.25rem;
+				padding-right: 0.25rem;
+				border-bottom: 4px solid rgba(var(--bs-dark-rgb), 0.5);
+				&.active {
+					border-bottom: 4px solid var(--bs-primary);
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+				border: none;
+				padding: calc(var(--bs-nav-link-padding-y) * 2.5);
+				position: absolute;
+				display: none;
+				width: auto !important;
+				left: 0;
+				right: 0;
+				width: 100% !important;
+				text-align: left !important;
+				z-index: 1;
+				font-weight: $font-weight-medium;
+				background-color: var(--bs-gray-100);
+				color: rgba(var(--bs-dark-rgb), 0.66);
+
+				&.active {
+					border: none;
+					position: relative;
+					display: block;
+					z-index: 999;
+
+					&:after {
+						font-family: "Font Awesome 6 Pro";
+						font-weight: 900;
+						content: "\f078";
+						position: absolute;
+						top: 50%;
+						right: calc(var(--bs-nav-link-padding-y) * 2.5);
+						transform: translateY(-50%);
+						font-size: 0.75rem;
+						color: var(--bs-dark);
+					}
+				}
+			}
+		}
+
+		@include media-breakpoint-up(md) {
+			flex: 1;
+
+			.nav-link {
+				font-size: var(--bs-font-size-h6);
+			}
+		}
+	}
+}

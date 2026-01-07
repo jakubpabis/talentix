@@ -1,0 +1,4 @@
+test_configuration:
+  report: lighthouse
+  url: https://blocks.myblennd.com/
+  video: false

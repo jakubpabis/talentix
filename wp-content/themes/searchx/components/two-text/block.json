@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/two-text",
+	"title": "Two Text",
+	"description": "",
+	"style": "blennder/two-text",
+	"script": "blennder/two-text",
+	"category": "components",
+	"keywords": [
+		"two-text"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.swiper {
+	&-slide {
+		padding: calc( 0.5 * $grid-gutter-width );
+		height: auto;
+		transition: opacity 0.3s ease-in-out;
+		transform: translateZ(0);
+
+		.card {
+			height: 100%;
+		}
+
+		&.swiper-slide-prev,
+		&.swiper-slide-partial {
+			opacity: 0.5;
+		}
+	}
+}

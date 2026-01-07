@@ -1,0 +1,241 @@
+/******************
+ *
+ * Global Buttons
+ *
+ ******************/
+
+// :root {
+// 	--light: 80;
+// 	--threshold: 60;
+// }
+
+.btn {
+	outline: 0;
+	border: none;
+	// --switch: calc((var(--light) - var(--threshold)) * -100%);
+	// color: hsl(0, 0%, var(--switch));
+	line-height: 1;
+	text-transform: uppercase;
+
+	@include media-breakpoint-down(md) {
+		font-size: 0.9rem !important;
+		padding-top: 0.8rem !important;
+		padding-bottom: 0.7rem !important;
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+	}
+
+	i {
+		transition: all 0.2s ease-in-out;
+		&:last-child {
+			margin-left: 0.5em;
+		}
+		&:first-child {
+			margin-right: 0.5em;
+		}
+	}
+
+	&:hover {
+		i {
+			// &:last-child {
+			// 	transform: translateX(0.5em);
+			// }
+			&:first-child {
+				transform: translateX(-0.5em);
+			}
+		}
+	}
+
+	&-sm {
+		@include media-breakpoint-down(xxl) {
+			padding-top: 0.6rem !important;
+			padding-bottom: 0.5rem !important;
+			padding-left: 1rem !important;
+			padding-right: 1rem !important;
+			font-size: 0.75rem !important;
+		}
+		@include media-breakpoint-down(md) {
+			font-size: 0.7rem !important;
+		}
+	}
+
+	&-primary,
+	&.gform_button,
+	&__default {
+		@include set-btn-colors(var(--bs-primary));
+		color: var(--bs-white) !important;
+		&:hover,
+		&:focus,
+		&:active,
+		&:focus-within {
+			color: var(--bs-white) !important;
+			background-color: rgb(16, 32, 54) !important;
+		}
+	}
+
+	&-outline-primary {
+		@include set-btn-outline-colors(var(--bs-primary));
+		&:hover,
+		&:focus,
+		&:active,
+		&:focus-within {
+			color: var(--bs-white) !important;
+		}
+	}
+
+	&-secondary {
+		@include set-btn-colors(var(--bs-secondary));
+		color: var(--bs-primary);
+	}
+
+	&-outline-secondary {
+		@include set-btn-outline-colors(var(--bs-secondary));
+		&:hover,
+		&:focus,
+		&:active,
+		&:focus-within {
+			color: var(--bs-primary) !important;
+		}
+	}
+
+	&-tertiary {
+		@include set-btn-colors(var(--bs-tertiary));
+		color: var(--bs-primary);
+	}
+
+	&-outline-tertiary {
+		@include set-btn-outline-colors(var(--bs-tertiary));
+		&:hover,
+		&:focus,
+		&:active,
+		&:focus-within {
+			color: var(--bs-primary) !important;
+		}
+	}
+
+	&-success {
+		@include set-btn-colors(var(--bs-success));
+		color: var(--bs-light);
+	}
+
+	&-outline-success {
+		@include set-btn-outline-colors(var(--bs-success));
+		&:hover,
+		&:focus,
+		&:active,
+		&:focus-within {
+			color: var(--bs-primary) !important;
+		}
+	}
+
+	&-info {
+		@include set-btn-colors(var(--bs-info));
+	}
+
+	&-outline-info {
+		@include set-btn-outline-colors(var(--bs-info));
+	}
+
+	&-warning {
+		@include set-btn-colors(var(--bs-warning));
+	}
+
+	&-outline-warning {
+		@include set-btn-outline-colors(var(--bs-warning));
+	}
+
+	&-danger {
+		@include set-btn-colors(var(--bs-danger));
+	}
+
+	&-outline-danger {
+		@include set-btn-outline-colors(var(--bs-danger));
+	}
+
+	&-light {
+		@include set-btn-colors(--bs-light);
+		color: var(--bs-primary);
+	}
+
+	&-outline-light {
+		@include set-btn-outline-colors(white);
+		&:hover,
+		&:focus,
+		&:active,
+		&:focus-within {
+			color: var(--bs-primary) !important;
+		}
+	}
+
+	&-dark {
+		@include set-btn-colors(var(--bs-dark));
+	}
+
+	&-outline-dark {
+		@include set-btn-outline-colors(var(--bs-dark));
+	}
+
+	&-link {
+		color: var(--bs-link) !important;
+		text-decoration: none;
+		padding: 0 !important;
+		&:hover {
+			color: color-mix(in srgb, var(--bs-link), #000 10%) !important;
+		}
+		&:focus,
+		&:active,
+		&:focus-within {
+			color: color-mix(in srgb, var(--bs-link), #000 20%) !important;
+		}
+	}
+
+	&-text {
+		padding: 0 !important;
+		font-weight: $font-weight-bold;
+
+		// &::after {
+		// 	content: "\f054";
+		// 	font-family: "Font Awesome 6 Free";
+		// 	font-size: rem(9);
+		// 	font-weight: 900;
+		// 	transition: $transition-base;
+		// 	margin-left: rem(17);
+		// }
+
+		// &.hover,
+		// &:hover {
+		// 	&::after {
+		// 		margin-left: rem(19);
+		// 	}
+		// }
+	}
+
+	&-outline-light {
+		border-color: var(--bs-dark);
+		color: var(--bs-dark);
+
+		&:hover {
+			color: var(--bs-black);
+		}
+	}
+
+	&-outline-dark {
+		border-color: var(--bs-light);
+		color: var(--bs-light);
+
+		&:hover {
+			color: var(--bs-light);
+		}
+	}
+
+	&.hover {
+		filter: brightness(0.9);
+	}
+}
+
+.input-group-append,
+.input-group-prepend {
+	> .btn {
+		border-width: var(--bs-border-width);
+	}
+}

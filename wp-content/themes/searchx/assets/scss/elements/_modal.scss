@@ -1,0 +1,46 @@
+.modal {
+	&-content {
+		overflow: hidden;
+	}
+
+	&-meta {
+		position: relative;
+		flex: 1 1 auto;
+		padding: 1rem 3rem 0.5rem 2rem;
+	}
+
+	&-img {
+		position: relative;
+		height: 100%;
+		width: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: top;
+		}
+	}
+
+	&-header {
+		flex-wrap: wrap;
+
+		.modal-title {
+			margin-top: 4rem;
+		}
+
+		button.close {
+			opacity: 1;
+			font-size: 3rem;
+			font-weight: $font-weight-light;
+			line-height: .75;
+			padding: 0;
+			margin: 0;
+			text-shadow: none;
+		}
+	}
+
+	iframe {
+		width: 100%;
+	}
+}

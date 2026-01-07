@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/logos",
+	"title": "Logos",
+	"description": "Put small graphics on display in a carousel or grid.",
+	"style": "blennder/logos",
+	"script": "blennder/logos",
+	"category": "components",
+	"keywords": [
+		"logos"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		},
+		"carousel_config": {
+			"loop": true,
+			"slidesPerView": 2,
+			"speed": 5000,
+			"autoplay": {
+				"delay": 10,
+				"disableOnInteraction": true
+			},
+			"breakpoints": {
+				"768": {
+					"slidesPerView": 3
+				},
+				"1020": {
+					"slidesPerView": 4
+				}
+			}
+		},
+		"card_group": {
+			"xs": 1,
+			"sm": 2,
+			"md": 3,
+			"lg": 4,
+			"xl": 5,
+			"xxl": 6
+		}
+	}
+}

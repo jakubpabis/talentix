@@ -1,0 +1,36 @@
+/************
+ *
+ * Video Player Styles
+ *
+ ***********/
+
+@import '@/importer';
+
+.video-player {
+
+	&__btn {
+		border: none;
+		padding: 0;
+		position: relative;
+
+		img {
+			max-height: rem( 500 );
+			object-fit: cover;
+		}
+	}
+
+	&__video {
+		img {
+			border-radius: var( --bs-border-radius );
+		}
+
+		iframe,
+		video {
+			height: rem( 280 );
+
+			@include media-breakpoint-up(md) {
+				height: rem( 600 );
+			}
+		}
+	}
+}

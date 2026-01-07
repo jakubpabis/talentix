@@ -1,0 +1,216 @@
+@mixin createNumbered($num, $className) {
+	$foo: "";
+	@for $i from $num through 1 {
+		$foo: $foo + "." + $className + "-" + $i + ", ";
+	}
+
+	#{$foo} {
+		@content;
+	}
+}
+
+@mixin remove_list_styles {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin clearfix {
+	&:after {
+		display: table;
+		clear: both;
+		content: "";
+	}
+}
+
+@mixin cover {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+@mixin overlay {
+	&:after {
+		background: rgba($black, 0.5);
+		content: "";
+		@include cover();
+	}
+}
+
+@mixin overlay-gradient {
+	&:after {
+		background: rgb(0, 0, 0);
+		background: linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.75) 0%,
+			rgba(0, 0, 0, 0) 60%
+		);
+		content: "";
+		@include cover();
+	}
+}
+
+@mixin gallery-overlay {
+	a {
+		position: relative;
+		display: block;
+
+		&:before,
+		&:after {
+			position: absolute;
+			content: "";
+			display: block;
+			z-index: 1;
+		}
+
+		&:before {
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+			transition: background-color 0.25s ease-in-out;
+			opacity: 0.4;
+			border-radius: var(--bs-border-radius-lg);
+		}
+
+		&:after {
+			content: "\f424";
+			font-family: "Font Awesome 6 Free";
+			color: white;
+			font-size: rem(30);
+			font-weight: 600;
+			top: 50%;
+			left: 50%;
+			transform: translateY(-50%) translateX(-50%);
+			z-index: 2;
+			opacity: 0;
+			transition: opacity 0.25s ease-in-out;
+			@include media-breakpoint-up(lg) {
+				font-size: rem(56);
+			}
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+
+		a {
+			&:before {
+				background-color: var(--bs-primary);
+			}
+
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+@mixin padding-dynamic($side) {
+	@each $breakpoint in map-keys($container-max-widths) {
+		@include media-breakpoint-up($breakpoint) {
+			$calc: calc(
+				(100vw - #{map-get($container-max-widths, $breakpoint)}) / 2 + #{$grid-gutter-width *
+					0.25}
+			);
+			@if "xs" != $breakpoint {
+				padding-#{$side}: $calc;
+			}
+		}
+	}
+}
+
+@mixin set-btn-colors($baseColor) {
+	background-color: $baseColor !important;
+	border: 2px solid transparent !important;
+	&:hover {
+		background-color: color-mix(in srgb, $baseColor, #000 10%) !important;
+	}
+	&:focus,
+	&:active,
+	&:focus-within {
+		background-color: color-mix(in srgb, $baseColor, #000 20%) !important;
+	}
+}
+
+@mixin set-btn-outline-colors($baseColor) {
+	background-color: transparent !important;
+	color: $baseColor !important;
+	border: 2px solid $baseColor !important;
+	&:hover {
+		background-color: $baseColor !important;
+		border-color: $baseColor !important;
+	}
+	&:focus,
+	&:active,
+	&:focus-within {
+		background-color: color-mix(in srgb, $baseColor, #000 10%) !important;
+		border-color: color-mix(in srgb, $baseColor, #000 10%) !important;
+	}
+}
+
+@mixin notch($val) {
+	clip-path: polygon(
+		0% $val,
+		$val 0%,
+		calc(100% - #{$val}) 0%,
+		100% $val,
+		100% calc(100% - #{$val}),
+		calc(100% - #{$val}) 100%,
+		$val 100%,
+		0% calc(100% - #{$val})
+	);
+}
+
+@mixin notch_tr_bl($val) {
+	clip-path: polygon(
+		0% 0%,
+		$val 0%,
+		calc(100% - #{$val}) 0%,
+		100% 0%,
+		100% 100%,
+		calc(100% - #{$val}) 100%,
+		$val 100%,
+		0% 100%
+	);
+}
+
+@mixin notch_tr($val) {
+	clip-path: polygon(
+		0% 0%,
+		0% 0%,
+		calc(100% - #{$val}) 0%,
+		100% $val,
+		100% 100%,
+		100% 100%,
+		0% 100%,
+		0% 100%
+	);
+}
+
+@mixin notch_tl($val) {
+	clip-path: polygon(
+		0% $val,
+		$val 0%,
+		100% 0%,
+		100% 0%,
+		100% 100%,
+		100% 100%,
+		0% 100%,
+		0% 100%
+	);
+}
+
+@mixin notch_bottom($val) {
+	clip-path: polygon(
+		0 0,
+		100% 0,
+		100% calc(100% - #{$val}),
+		calc(100% - #{$val}) 100%,
+		$val 100%,
+		0% calc(100% - #{$val})
+	);
+}

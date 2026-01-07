@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/counters",
+	"title": "Counters",
+	"description": "The counters will increment at a set rate from a set value to a greater set value.",
+	"style": "blennder/counters",
+	"script": "blennder/counters",
+	"category": "components",
+	"keywords": [
+		"counters"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

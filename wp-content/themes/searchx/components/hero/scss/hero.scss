@@ -1,0 +1,144 @@
+@import "@/importer";
+
+.hero {
+	&__header {
+		margin-top: 0;
+	}
+
+	&__the-dog {
+		@include media-breakpoint-down(md) {
+			opacity: 0.15 !important;
+			margin-bottom: -80px;
+			margin-right: -50px;
+		}
+		@include media-breakpoint-down(sm) {
+			display: none !important;
+		}
+	}
+
+	&--home {
+		// padding-top: 80px !important;
+		input {
+			background: $gray-100;
+			line-height: 1;
+			padding-top: 1rem !important;
+			padding-bottom: 0.8rem !important;
+			border: none !important;
+		}
+	}
+
+	&__col {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		img {
+			@include media-breakpoint-down(lg) {
+				max-height: 33vh !important;
+				width: auto !important;
+			}
+		}
+
+		// @include media-breakpoint-down(md) {
+		// 	min-height: rem( 350 );
+		// }
+
+		// @include media-breakpoint-up(md) {
+		// 	min-height: rem( 500 );
+		// }
+		.hero__text {
+			p,
+			ul,
+			li {
+				font-size: 1rem;
+			}
+			ul {
+				padding: 0;
+				list-style: none;
+			}
+			li {
+				padding: 0.3em 0 0.3em 2em;
+				position: relative;
+				&:after {
+					font-family: "Font Awesome 6 Pro";
+					position: absolute;
+					content: "\f00c";
+					color: var(--bs-primary);
+					left: 0;
+				}
+			}
+		}
+
+		.btn {
+			margin-top: 1em;
+		}
+
+		// img {
+		// 	position: absolute;
+		// }
+	}
+
+	&__video {
+		z-index: 0;
+		@include cover();
+
+		.video-pause-btn {
+			.video-btn-wrap {
+				bottom: 0;
+				right: 0;
+				transform: none;
+			}
+		}
+
+		video {
+			border-radius: 0;
+		}
+	}
+
+	&__scroll {
+		display: block;
+		color: var(--bs-white);
+
+		&:hover,
+		&:focus {
+			color: var(--bs-primary);
+		}
+
+		.scrollOn {
+			animation: action 1s infinite alternate;
+		}
+	}
+
+	&__background-img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		&--left {
+			background: linear-gradient(
+				to left,
+				rgba(0, 0, 0, 0.5),
+				rgba(0, 0, 0, 0)
+			);
+		}
+		&--right {
+			background: linear-gradient(
+				to right,
+				rgba(0, 0, 0, 0.5),
+				rgba(0, 0, 0, 0)
+			);
+		}
+	}
+}
+
+@keyframes action {
+	0% {
+		transform: translateY(5px);
+	}
+
+	100% {
+		transform: translateY(12px);
+	}
+}

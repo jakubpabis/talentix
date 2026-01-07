@@ -1,0 +1,19 @@
+.gallery {
+	display: grid;
+	gap: calc( 0.5 * $grid-gutter-width );
+	grid-auto-rows: minmax( 100px, auto );
+
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		@include media-breakpoint-up($breakpoint) {
+			@for $i from 1 through 8 {
+				&-columns-#{$breakpoint}-#{$i} {
+					grid-template-columns: repeat(#{$i}, 1fr);
+				}
+			}
+		}
+	}
+
+	&-item {
+		margin: 0;
+	}
+}

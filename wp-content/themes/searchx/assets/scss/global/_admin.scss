@@ -1,0 +1,36 @@
+.editor-styles-wrapper {
+	.wp-block {
+		max-width: 100%;
+	}
+
+	[data-aos] {
+		opacity: 1;
+	}
+}
+
+#wp-link-wrap {
+	#link-options,
+	#search-panel {
+		margin: 0;
+		padding: 0;
+
+		label {
+			display: block;
+
+			input[type='text'],
+			input[type='search'] {
+				display: inline-block;
+			}
+		}
+	}
+
+	input[type='submit'] {
+		color: black;
+	}
+
+	#wp-link {
+		.query-results {
+			top: 240px;
+		}
+	}
+}

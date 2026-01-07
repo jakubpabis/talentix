@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/slider",
+	"title": "Slider",
+	"description": "A presentation of slides containing text and/or an image.",
+	"style": "blennder/slider",
+	"script": "blennder/slider",
+	"category": "components",
+	"keywords": [
+		"slider"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		},
+		"carousel_config": {
+			"breakpoints": {
+				"768": {
+					"slidesPerView": 1
+				},
+				"1020": {
+					"slidesPerView": 1
+				}
+			}
+		}
+	}
+}

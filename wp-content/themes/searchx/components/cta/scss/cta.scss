@@ -1,0 +1,224 @@
+@import "@/importer";
+
+.cta {
+	$this: &;
+
+	&__content {
+		margin-bottom: 1rem;
+		@include media-breakpoint-up(md) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__image {
+		padding: 0;
+		img {
+			object-fit: cover;
+			@include media-breakpoint-down(lg) {
+				object-fit: contain !important;
+				position: relative !important;
+			}
+		}
+	}
+
+	&[data-bs-theme="dark"] {
+		.cta__form {
+			.gform_wrapper {
+				input,
+				select,
+				textarea {
+					border: none;
+					background-color: var(--bs-gray-100);
+					box-shadow: none;
+					&:focus,
+					&:active {
+						outline: 0;
+						box-shadow: none;
+					}
+					&::placeholder {
+						color: var(--bs-dark);
+					}
+				}
+				.gform_button {
+					background-color: var(--bs-primary) !important;
+					padding: var(--bs-padding-y-md) var(--bs-padding-x-lg) !important;
+					font-size: 1rem !important;
+				}
+			}
+		}
+	}
+
+	&[data-bs-theme="light"] {
+		.cta__form {
+			.gform_wrapper {
+				input,
+				select,
+				textarea {
+					border: none;
+					background-color: var(--bs-gray-100);
+					box-shadow: none;
+					&:focus,
+					&:active {
+						outline: 0;
+						box-shadow: none;
+					}
+					&::placeholder {
+						color: var(--bs-dark);
+					}
+				}
+				.gform_button {
+					background-color: var(--bs-primary) !important;
+					padding: var(--bs-padding-y-md) var(--bs-padding-x-lg) !important;
+					font-size: 1rem !important;
+				}
+			}
+		}
+	}
+
+	.gform_wrapper {
+		border-radius: var(--bs-border-radius);
+		// @include media-breakpoint-down(lg) {
+		// 	padding: 0 0 calc(var(--bs-padding-x-lg) * 1.44);
+		// }
+		// @include media-breakpoint-down(md) {
+		// 	padding: 0 0 calc(var(--bs-padding-x-lg) * 1.25);
+		// }
+		// @include media-breakpoint-down(sm) {
+		// 	padding: 0 0 var(--bs-padding-x-lg);
+		// }
+		.gform_submission_error {
+			font-size: 1rem !important;
+		}
+		.gform_fields {
+			grid-column-gap: $spacer;
+			grid-row-gap: calc($spacer * 1.25);
+		}
+		.gform_title {
+			font-size: var(--bs-font-size-h3) !important;
+		}
+		.gform_title,
+		.gform_description,
+		.gform_required_legend {
+			display: none;
+		}
+		.gform_heading {
+			margin-bottom: 2rem;
+		}
+		.gform_button {
+			background-color: var(--bs-primary) !important;
+		}
+	}
+
+	.triangle {
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 0 60px 60px 60px;
+		border-color: transparent transparent white transparent;
+		transform: rotate(45deg);
+		position: absolute;
+		top: 30%;
+		left: -50px;
+	}
+
+	&__form {
+		input,
+		textarea,
+		select {
+			padding: calc(var(--bs-padding-x-sm) / 4) var(--bs-padding-x-sm) !important;
+		}
+		&-half {
+			@include notch(48px);
+			position: relative;
+			@include media-breakpoint-down(lg) {
+				@include notch(40px);
+			}
+			@include media-breakpoint-down(md) {
+				@include notch(32px);
+			}
+			@include media-breakpoint-down(sm) {
+				@include notch(24px);
+			}
+			.gform_wrapper {
+				padding: 0 !important;
+			}
+		}
+		&-cont {
+			@include media-breakpoint-down(lg) {
+				padding-top: 2rem;
+				padding-bottom: 2.5rem;
+			}
+			@include media-breakpoint-down(md) {
+				padding-top: 1rem;
+				padding-bottom: 1.5rem;
+			}
+		}
+	}
+
+	&--form-left,
+	&--form-right,
+	&--text-split {
+		#{$this}__col {
+			@include media-breakpoint-up(lg) {
+				display: flex;
+			}
+		}
+	}
+
+	&--form-left {
+		#{$this}__form-cont {
+			@include media-breakpoint-up(lg) {
+				order: -1;
+			}
+		}
+	}
+
+	&--form-stacked {
+		#{$this}__content {
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	&--text-split {
+		#{$this}__row {
+			flex-wrap: wrap;
+		}
+
+		#{$this}__heading {
+			text-align: center;
+			margin-bottom: 1rem;
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 0;
+			}
+		}
+
+		#{$this}__content {
+			text-align: center;
+
+			p {
+				margin-bottom: 0;
+			}
+
+			@include media-breakpoint-up(lg) {
+				display: flex;
+				align-items: center;
+			}
+
+			@include media-breakpoint-down(lg) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&--text {
+		#{$this}__col {
+			text-align: center;
+			@include media-breakpoint-up(lg) {
+				max-width: 66%;
+				margin: auto;
+			}
+		}
+	}
+}

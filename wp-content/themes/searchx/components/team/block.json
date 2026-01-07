@@ -1,0 +1,58 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/team",
+	"title": "Team",
+	"description": "This block is populated with posts from the 'Team' CPT.",
+	"style": "blennder/team",
+	"script": "blennder/team",
+	"category": "components",
+	"keywords": [
+		"team"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		},
+		"query_args": {
+			"post_type": "team",
+			"orderby": "menu_order",
+			"order": "ASC",
+			"posts_per_page": -1
+		},
+		"carousel_config": {
+			"slidesPerView": 1,
+			"speed": 300,
+			"breakpoints": {
+				"768": {
+					"slidesPerView": 1
+				},
+				"1020": {
+					"slidesPerView": 3
+				}
+			}
+		},
+		"card_group": {
+			"xs": 2,
+			"sm": 2,
+			"md": 2,
+			"lg": 3,
+			"xl": 4,
+			"xxl": 5
+		}
+	}
+}

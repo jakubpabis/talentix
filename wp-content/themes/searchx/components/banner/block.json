@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/banner",
+	"title": "Banner",
+	"description": "Full Size banner section.",
+	"style": "blennder/banner",
+	"script": "blennder/banner",
+	"category": "components",
+	"keywords": [
+		"banner"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

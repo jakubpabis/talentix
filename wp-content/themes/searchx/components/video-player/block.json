@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/video-player",
+	"title": "Video Player",
+	"description": "The video player is a great tool for displaying a video inline or in a modal.",
+	"style": "blennder/video-player",
+	"script": "blennder/video-player",
+	"category": "components",
+	"keywords": [
+		"video player"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

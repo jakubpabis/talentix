@@ -1,0 +1,124 @@
+/************
+ *
+ * Short Code Styles
+ *
+ ***********/
+
+@import "@/importer";
+
+.short-code {
+	.sb-wall {
+		padding-bottom: 0 !important;
+		margin: 0 -20px;
+	}
+
+	.sbsw-owl-stage-outer {
+		padding-top: 0 !important;
+
+		.sbsw-item {
+			padding-top: 0 !important;
+		}
+	}
+
+	.sbsw-item-inner {
+		.card-body {
+			min-height: unset;
+			padding: 20px;
+			position: relative;
+
+			.sbsw-item-media {
+				border-radius: var(--bs-border-radius-md);
+				overflow: hidden;
+				aspect-ratio: 1 / 1;
+				img {
+					object-fit: cover;
+					object-position: center;
+					max-width: 9999px;
+					min-height: 100%;
+					min-width: 100%;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+				&:after {
+					display: none;
+				}
+				.sbsw-play-button {
+					z-index: 9;
+				}
+			}
+
+			hr {
+				border-color: var(--bs-gray-500);
+				margin: 0.25rem 0 0.5rem 0;
+			}
+
+			.sbsw-content-text {
+				padding: 0 !important;
+			}
+
+			.sbsw-item-stats {
+				padding: 0 0 0.5rem 0;
+			}
+		}
+	}
+
+	.sbsw-owl-nav {
+		position: absolute;
+		width: auto;
+		left: auto;
+		right: 10px;
+		bottom: -30px;
+		display: flex;
+		margin: 0 -5px;
+
+		> div {
+			position: relative;
+			top: auto;
+			border-radius: 9999px;
+			box-shadow: none !important;
+			border: 1.5px solid var(--bs-black);
+			padding: 0 !important;
+			margin: 0 5px !important;
+			width: 45px;
+			height: 45px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform: none !important;
+
+			svg path {
+				transition: all 0.25s ease-in-out;
+			}
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: var(--bs-black) !important;
+
+				svg path {
+					fill: var(--bs-white) !important;
+				}
+			}
+		}
+	}
+
+	.sbsw-owl-dots {
+		position: absolute;
+		width: auto;
+		left: 5px;
+		right: auto;
+		bottom: -30px;
+		.sbsw-owl-dot {
+			span {
+				background-color: var(--bs-primary);
+			}
+			&.active {
+				span {
+					background-color: var(--bs-primary);
+				}
+			}
+		}
+	}
+}

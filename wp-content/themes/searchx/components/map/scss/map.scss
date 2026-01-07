@@ -1,0 +1,54 @@
+/************
+ *
+ * Map Styles
+ *
+ ***********/
+
+@import "@/importer";
+
+.map {
+	$this: &;
+
+	@include media-breakpoint-up(md) {
+		.container-fluid #{$this}__header {
+			max-width: map-get($container-max-widths, "xl");
+			margin: 0 auto;
+			padding-left: calc(0.5 * $grid-gutter-width);
+			padding-right: calc(0.5 * $grid-gutter-width);
+		}
+	}
+
+	.acf-map,
+	iframe {
+		width: 100%;
+	}
+
+	.locations__map {
+		height: rem(600);
+		max-height: 90vh;
+		width: 100%;
+	}
+
+	&__card {
+		margin-left: -33.333333333%;
+
+		@include media-breakpoint-down(xl) {
+			margin-left: -41.66666667%;
+		}
+
+		@include media-breakpoint-down(lg) {
+			margin-left: -50%;
+		}
+
+		@include media-breakpoint-down(md) {
+			margin-left: auto;
+			margin-top: 50px;
+		}
+
+		.card-body {
+			hr {
+				margin: calc($spacer * 2) 0;
+			}
+		}
+	}
+}

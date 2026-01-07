@@ -1,0 +1,214 @@
+/******************
+ *
+ * Gravity Forms
+ *
+ ******************/
+
+.gform-theme {
+	--gf-form-gap-y: 20px;
+	.gform_button {
+		@include set-btn-colors(var(--bs-primary));
+	}
+}
+
+.gform-theme--foundation .gform_fields {
+	row-gap: 20px !important;
+}
+
+.gform_fields {
+	display: grid;
+	grid-gap: $spacer;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.gfield {
+	grid-column: 1/-1;
+
+	&--width-half {
+		@include media-breakpoint-up(md) {
+			grid-column: span 6;
+		}
+	}
+}
+
+.gfield_required {
+	color: $form-feedback-invalid-color;
+}
+
+.gfield_label,
+.form-label {
+	font-weight: $font-weight-bold;
+}
+
+.gform-field-label {
+	margin-bottom: calc($spacer / 2);
+
+	&--type-sub {
+		margin-bottom: 0;
+		margin-top: calc($spacer / 2);
+	}
+}
+
+.validation_message {
+	color: $form-feedback-invalid-color;
+	font-style: italic;
+	font-size: $font-size-sm;
+}
+
+.gfield_input_text,
+.gfield_input_email,
+.gfield_select,
+.gfield_textarea {
+	border: none;
+	border-radius: rem(7);
+	padding: rem(10);
+	width: 100%;
+}
+
+.gfield--type-honeypot {
+	display: none;
+	left: -9000px;
+	position: absolute;
+}
+
+.ginput_complex {
+	display: flex;
+	gap: $spacer;
+}
+
+.gform-grid-col--size-auto {
+	flex-basis: 50%;
+}
+
+// //Progress Bar
+.gf_progressbar_title {
+	font-size: calc(1.25 * $font-size-base);
+	text-align: center;
+}
+
+.gf_progressbar_wrapper {
+	margin: calc(3 * $spacer) 0;
+}
+
+.gf_progressbar_percentage {
+	background-color: var(--bs-primary);
+}
+
+// // UI Datepicker
+.gfield > .ginput_container_date {
+	position: relative;
+
+	.ui-datepicker-trigger {
+		position: absolute;
+		right: rem(10);
+		top: calc(2 * $input-height);
+		transform: translateY(-50%);
+	}
+}
+
+.ui-datepicker {
+	background: #fcfcfc;
+	border: 1px solid var(--bs-gray);
+	min-width: 200px;
+	text-align: center;
+	box-shadow: var(--bs-box-shadow-lg);
+}
+
+.ui-datepicker-next,
+.ui-datepicker-prev {
+	width: 20%;
+	font-weight: $font-weight-bold;
+	padding: 0 rem(5);
+	cursor: pointer;
+
+	&.ui-datepicker-hover {
+		color: var(--bs-white);
+	}
+}
+
+.ui-datepicker-prev {
+	float: left;
+}
+
+.ui-datepicker-next {
+	float: right;
+}
+
+.ui-datepicker-title {
+	width: 60%;
+	float: left;
+
+	select {
+		width: auto;
+		display: inline-block;
+	}
+}
+
+.ui-datepicker-header {
+	@include clearfix;
+	border-bottom: 1px solid var(--bs-gray);
+	padding: rem(3) 0;
+}
+
+.ui-datepicker-header,
+.ui-datepicker-calendar {
+	width: 100%;
+}
+
+.ui-datepicker-calendar {
+	tbody tr {
+		border-top: 1px solid var(--bs-gray);
+
+		td {
+			border-right: 1px solid var(--bs-gray);
+			padding: 0;
+		}
+	}
+}
+
+.ui-state-default {
+	display: block;
+	text-align: center;
+	color: var(--bs-primary);
+	font-weight: $font-weight-bold;
+}
+
+.ui-state-hover {
+	color: var(--bs-white);
+	background-color: var(--bs-primary);
+}
+
+.gform_heading {
+	display: none !important;
+}
+
+html:not(.wp-toolbar),
+body:not(.wp-admin) {
+	input:not([type="checkbox"], [type="file"]),
+	textarea,
+	select {
+		height: auto !important;
+		padding: 0 var(--bs-padding-x-sm);
+		font-size: 1rem !important;
+		color: var(--bs-primary) !important;
+		border-radius: 0 !important;
+		&::placeholder {
+			font-weight: $font-weight-medium !important;
+			color: var(--bs-gray-600) !important;
+		}
+		&:has(option.gf_placeholder:checked) {
+			font-weight: $font-weight-medium !important;
+			color: var(--bs-gray-600) !important;
+		}
+		&.btn-primary,
+		&.gform_button {
+			text-transform: uppercase !important;
+			background-color: var(--bs-primary);
+			color: var(--bs-white) !important;
+		}
+	}
+}
+
+.gform_submission_error {
+	@extend .h6;
+}

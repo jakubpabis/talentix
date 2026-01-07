@@ -1,0 +1,68 @@
+@import "@/importer";
+
+body {
+	color: var(--bs-primary);
+	background-color: #e5f1f4;
+
+	main,
+	footer {
+		transition: filter 333ms ease-in-out;
+	}
+
+	&:not(.header-transparent) {
+		main {
+			padding-top: 70px;
+			@include media-breakpoint-up(md) {
+				padding-top: 75px;
+			}
+		}
+	}
+
+	&:not(.header-transparent, .page-template-template-jobs) {
+		main {
+			padding-top: 90px;
+
+			@include media-breakpoint-up(xl) {
+				padding-top: 110px;
+			}
+		}
+	}
+
+	.mobile-overlay {
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 333ms ease-in-out, visibility 333ms ease-in-out;
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		min-height: 100%;
+		display: block;
+		background-color: var(--bs-black);
+	}
+
+	&.nav-open {
+		main,
+		footer {
+			filter: blur(1.5rem);
+		}
+		.mobile-overlay {
+			opacity: 0.66;
+			visibility: visible;
+		}
+	}
+}
+
+[data-bs-theme] {
+	background-color: var(--bs-body-bg);
+	color: var(--bs-primary);
+}
+[data-bs-theme="dark"] {
+	color: white;
+}
+
+html,
+body {
+	scroll-behavior: smooth;
+	// overflow-x: hidden !important;
+}

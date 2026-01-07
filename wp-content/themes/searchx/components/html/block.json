@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/html",
+	"title": "HTML",
+	"description": "HTML.",
+	"style": "blennder/html",
+	"script": "blennder/html",
+	"category": "components",
+	"keywords": [
+		"HTML"
+	],
+	"acf": {
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/blog",
+	"title": "Blog",
+	"description": "Renders the featured image, title, taxonomy, link, and excerpt of blog posts.",
+	"style": "blennder/blog",
+	"script": "blennder/blog",
+	"category": "components",
+	"keywords": [
+		"blog"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap",
+				"swiper"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery",
+				"swiper"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		},
+		"carousel_config": {
+			"slidesPerView": 1,
+			"speed": 300,
+			"breakpoints": {
+				"768": {
+					"slidesPerView": 1
+				},
+				"1020": {
+					"slidesPerView": 3
+				}
+			}
+		},
+		"card_group": {
+			"xs": 1,
+			"sm": 1,
+			"md": 2,
+			"lg": 2,
+			"xl": 3,
+			"xxl": 4
+		}
+	}
+}

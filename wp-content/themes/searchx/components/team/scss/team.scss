@@ -1,0 +1,150 @@
+/************
+ *
+ * Team Styles
+ *
+ ***********/
+
+@import "@/importer";
+
+.team {
+	&__title {
+		font-size: $h5-font-size;
+	}
+
+	&__socials {
+		position: absolute;
+		top: 2.75rem;
+		right: 3rem;
+	}
+
+	&__image {
+		width: 100%;
+		min-height: 100%;
+		object-fit: cover;
+		object-position: top center;
+	}
+
+	&__modal {
+		.row {
+			flex-wrap: nowrap;
+		}
+
+		@include media-breakpoint-down(md) {
+			.modal-header {
+				flex-wrap: nowrap;
+			}
+
+			.modal-header,
+			.modal-meta,
+			.modal-body {
+				padding-left: 0;
+			}
+		}
+	}
+
+	&--grid,
+	&--carousel {
+		.card-img {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+
+	&__list {
+		&-item {
+			@include notch_tl(100px);
+			@include media-breakpoint-up(md) {
+				display: flex;
+				flex-direction: row;
+			}
+			@include media-breakpoint-down(xxl) {
+				@include notch_tl(80px);
+			}
+			@include media-breakpoint-down(xl) {
+				@include notch_tl(70px);
+			}
+			@include media-breakpoint-down(lg) {
+				@include notch_tl(60px);
+			}
+			@include media-breakpoint-down(md) {
+				@include notch_tl(50px);
+				.card-body {
+					flex-wrap: wrap;
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				@include notch_tl(40px);
+			}
+		}
+
+		&-body {
+			display: flex;
+			flex: 1 1 auto;
+			flex-direction: column;
+			min-height: unset;
+			padding: 2rem 3rem;
+			position: relative;
+
+			@include media-breakpoint-down(md) {
+				flex-wrap: wrap;
+				padding: 1.5rem;
+				.team__socials {
+					top: 1.5rem;
+					right: 1.5rem;
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				padding: 1rem;
+				.team__socials {
+					top: 1rem;
+					right: 1rem;
+				}
+				.team__title {
+					font-size: 1.5rem !important;
+					padding-right: 4rem !important;
+				}
+				.team__text {
+					* {
+						font-size: 0.85rem;
+					}
+					.lead {
+						font-size: 1rem !important;
+					}
+					.team__contact {
+						a {
+							font-size: 0.85rem !important;
+						}
+					}
+				}
+			}
+		}
+
+		&-image-wrapper {
+			// border-radius: var(--bs-border-radius-lg);
+			overflow: hidden;
+			@include media-breakpoint-up(md) {
+				flex-basis: 40%;
+			}
+			@include media-breakpoint-down(md) {
+				flex-basis: 100%;
+				max-height: 400px;
+			}
+			@include media-breakpoint-down(sm) {
+				max-height: 320px;
+			}
+		}
+
+		&-image {
+			width: 100%;
+		}
+
+		&-body {
+			@include media-breakpoint-up(md) {
+				flex-basis: calc(100% - 300px);
+			}
+			@include media-breakpoint-down(md) {
+				flex-basis: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/functions";
+
+@import "variables-bootstrap";
+@import "variables-bootstrap-dark";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "config";
+
+$custom-colors: (
+	"tertiary": $tertiary,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";

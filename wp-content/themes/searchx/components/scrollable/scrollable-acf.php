@@ -1,0 +1,96 @@
+<?php
+
+return array(
+	'key' => 'group_scrollable',
+	'title' => 'Scrollable',
+	'fields' => array(
+		array(
+			'key' => 'field_5bb24gdscroll43br041',
+			'label' => 'Scrollable items',
+			'name' => 'scrollables',
+			'type' => 'repeater',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'collapsed' => 'field_5f32g4rvef9e042',
+			'min' => 0,
+			'max' => 0,
+			'layout' => 'block',
+			'button_label' => 'Add Section',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_5f32g4rvef9e042',
+					'label' => 'Title',
+					'name' => 'title',
+					'type' => 'textarea',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'maxlength' => '',
+					'rows' => 3,
+					'new_lines' => 'br',
+				),
+				array(
+					'key' => 'field_5q3b4ref3433c2',
+					'label' => 'Title Tag',
+					'name' => 'title_tag',
+					'type' => 'button_group',
+					'instructions' => 'Choose a component Header Tag',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5f32g4rvef9e042',
+								'operator' => '!=empty',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'h1' => 'H1',
+						'h2' => 'H2',
+						'h3' => 'H3',
+						'h4' => 'H4',
+						'h5' => 'H5',
+						'h6' => 'H6',
+						'p' => 'P',
+					),
+					'allow_null' => 0,
+					'default_value' => 'h2',
+					'layout' => 'horizontal',
+					'return_format' => 'value',
+				),
+				array(
+					'key' => 'field_5berqfd23g4bre23ac1',
+					'label' => 'Text',
+					'name' => 'text',
+					'type' => 'wysiwyg',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+				),
+			),
+		),
+	),
+);

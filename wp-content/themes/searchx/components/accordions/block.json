@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/accordions",
+	"title": "Accordions",
+	"description": "Clickable elements that toggle between hiding and showing content.",
+	"style": "blennder/accordions",
+	"script": "blennder/accordions",
+	"category": "components",
+	"keywords": [
+		"accordion"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

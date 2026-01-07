@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/blurbs",
+	"title": "Blurbs",
+	"description": "A series of card-like elements containing an icon, text, and a link.",
+	"style": "blennder/blurbs",
+	"script": "blennder/blurbs",
+	"category": "components",
+	"keywords": [
+		"blurbs"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

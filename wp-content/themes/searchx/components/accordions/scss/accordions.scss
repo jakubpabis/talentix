@@ -1,0 +1,134 @@
+/************
+ *
+ * Accordion Styles
+ *
+ ***********/
+@import "@/importer";
+
+.accordions {
+	&[data-bs-theme="dark"] {
+		.accordions__btn,
+		.accordions__collapse {
+			background-color: color-mix(in srgb, var(--bs-secondary), #fff 15%);
+		}
+	}
+
+	&[data-bs-theme="light"] {
+		.accordions__btn,
+		.accordions__collapse {
+			background-color: var(--bs-white);
+		}
+	}
+
+	&__header {
+		padding-top: 0 !important;
+	}
+
+	&__btn {
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+	}
+
+	&__item {
+		// max-width: $content_max_width;
+
+		.accordions__header {
+			padding: calc($spacer * 2) 0 0;
+			@include media-breakpoint-down(lg) {
+				padding: calc($spacer * 1.5) 0 0;
+			}
+			@include media-breakpoint-down(sm) {
+				padding: $spacer 0 0;
+			}
+		}
+	}
+
+	&__body {
+		padding: $spacer 0;
+		max-width: calc(100% - 30px);
+
+		p:first-child {
+			margin-top: 0;
+		}
+
+		// p:last-child {
+		// 	margin-bottom: 0;
+		// }
+	}
+
+	&__collapse {
+		margin-top: -1rem;
+		padding-top: 1rem;
+	}
+
+	&__icon {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		// padding-right: calc($spacer / 2);
+
+		&-collapse {
+			display: inline-block !important;
+			.accordions__btn:not(.collapsed) & {
+				display: none !important;
+			}
+		}
+
+		&-collapsed {
+			display: none !important;
+			.accordions__btn:not(.collapsed) & {
+				display: inline-block !important;
+			}
+		}
+	}
+
+	&__btn {
+		align-items: center;
+		background: transparent;
+		border: none;
+		border-bottom: 2px solid;
+		color: var(--bs-body-color);
+		cursor: pointer;
+		display: flex;
+		font-size: $h5-font-size;
+		font-weight: $font-weight-semibold;
+		justify-content: space-between;
+		padding: $spacer 0;
+		position: relative;
+		text-align: left;
+		width: 100%;
+		white-space: normal;
+	}
+
+	&__col {
+		flex-basis: 100%;
+
+		&.component__header {
+			margin-bottom: 0;
+		}
+	}
+
+	&--half {
+		.accordion {
+			@include media-breakpoint-up(lg) {
+				columns: 2;
+				gap: 2rem;
+			}
+		}
+		.column-break {
+			break-after: column;
+		}
+	}
+
+	&--split {
+		@include media-breakpoint-up(md) {
+			.component__header {
+				margin: auto;
+			}
+
+			.accordions__col {
+				flex-basis: 50%;
+			}
+		}
+	}
+}

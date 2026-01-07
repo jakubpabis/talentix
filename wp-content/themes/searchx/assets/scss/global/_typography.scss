@@ -1,0 +1,328 @@
+/******************
+ *
+ * Typography
+ *
+ ******************/
+
+// Responsive Heading Typography
+
+:root {
+	--bs-heading-color: var(--bs-primary);
+	--gf-form-gap-y: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: var(--bs-font-primary) !important;
+	--bs-heading-color: var(--bs-primary);
+}
+
+[data-bs-theme="dark"] {
+	--bs-heading-color: var(--bs-white);
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6 {
+		--bs-heading-color: var(--bs-white);
+	}
+}
+
+h1,
+.h1 {
+	font-size: clamp(
+		var(--bs-font-size-h1-mobile),
+		3vw,
+		var(--bs-font-size-h1)
+	) !important;
+	font-weight: var(--bs-font-weight-h1);
+	margin-top: var(--bs-margin-top-h1);
+	margin-bottom: var(--bs-margin-bottom-h1);
+
+	@include media-breakpoint-up(xxl) {
+		font-size: var(--bs-font-size-h1) !important;
+	}
+}
+
+.h1,
+.h1 * {
+	font-size: clamp(
+		var(--bs-font-size-h1-mobile),
+		3vw,
+		var(--bs-font-size-h1)
+	) !important;
+
+	@include media-breakpoint-up(xxl) {
+		font-size: var(--bs-font-size-h1) !important;
+	}
+}
+
+h2,
+.h2 {
+	font-size: clamp(
+		var(--bs-font-size-h2-mobile),
+		2.85vw,
+		var(--bs-font-size-h2)
+	) !important;
+	font-weight: var(--bs-font-weight-h2);
+	margin-top: var(--bs-margin-top-h2);
+	margin-bottom: var(--bs-margin-bottom-h2);
+
+	@include media-breakpoint-up(xxl) {
+		font-size: var(--bs-font-size-h2) !important;
+	}
+}
+
+.h2,
+.h2 * {
+	font-size: clamp(
+		var(--bs-font-size-h2-mobile),
+		2.85vw,
+		var(--bs-font-size-h2)
+	) !important;
+
+	@include media-breakpoint-up(xxl) {
+		font-size: var(--bs-font-size-h2) !important;
+	}
+}
+
+h3,
+.h3 {
+	font-size: clamp(
+		var(--bs-font-size-h3-mobile),
+		1.5vw,
+		var(--bs-font-size-h3)
+	) !important;
+	font-weight: var(--bs-font-weight-h3);
+	margin-top: var(--bs-margin-top-h3);
+	margin-bottom: var(--bs-margin-bottom-h3);
+
+	@include media-breakpoint-up(xxl) {
+		font-size: var(--bs-font-size-h3) !important;
+	}
+}
+
+.h3,
+.h3 * {
+	font-size: clamp(
+		var(--bs-font-size-h3-mobile),
+		1.5vw,
+		var(--bs-font-size-h3)
+	) !important;
+
+	@include media-breakpoint-up(xxl) {
+		font-size: var(--bs-font-size-h3) !important;
+	}
+}
+
+h4,
+.h4 {
+	font-size: clamp(
+		var(--bs-font-size-h4-mobile),
+		1.25vw,
+		var(--bs-font-size-h4)
+	) !important;
+	font-weight: var(--bs-font-weight-h4);
+	margin-top: var(--bs-margin-top-h4);
+	margin-bottom: var(--bs-margin-bottom-h4);
+
+	@include media-breakpoint-up(xxl) {
+		font-size: var(--bs-font-size-h4) !important;
+	}
+}
+
+.h4,
+.h4 * {
+	font-size: clamp(
+		var(--bs-font-size-h4-mobile),
+		1.25vw,
+		var(--bs-font-size-h4)
+	) !important;
+
+	@include media-breakpoint-up(xxl) {
+		font-size: var(--bs-font-size-h4) !important;
+	}
+}
+
+h5,
+.h5 {
+	font-size: var(--bs-font-size-h5-mobile) !important;
+	font-weight: var(--bs-font-weight-h5);
+	margin-top: var(--bs-margin-top-h5);
+	margin-bottom: var(--bs-margin-bottom-h5);
+
+	@include media-breakpoint-up(xl) {
+		font-size: var(--bs-font-size-h5) !important;
+	}
+}
+
+.h5,
+.h5 * {
+	font-size: var(--bs-font-size-h5-mobile) !important;
+
+	@include media-breakpoint-up(xl) {
+		font-size: var(--bs-font-size-h5) !important;
+	}
+}
+
+h6,
+.h6 {
+	font-size: var(--bs-font-size-h6-mobile) !important;
+
+	@include media-breakpoint-up(xl) {
+		font-size: var(--bs-font-size-h6) !important;
+	}
+}
+
+.lead,
+.lead * {
+	&:not(h1, h2, h3, h4, h5, h6) {
+		font-size: clamp(
+			var(--bs-font-size-lg),
+			1.25vw,
+			var(--bs-font-size-lg)
+		) !important;
+	}
+}
+
+.small,
+.small *,
+small,
+small * {
+	font-size: var(--bs-font-size-sm) !important;
+}
+
+p {
+	font-size: var(--bs-font-size-base);
+	font-weight: var(--bs-font-weight-base);
+	margin-top: var(--bs-margin-top-base);
+	margin-bottom: var(--bs-margin-bottom-base);
+	line-height: 166%;
+	font-family: var(--bs-font-secondary);
+}
+
+.font-primary {
+	font-family: var(--bs-font-primary) !important;
+}
+
+a {
+	text-decoration: none;
+}
+
+.preheader {
+	font-size: var(--bs-font-size-base) !important;
+	font-weight: var(--bs-font-weight-h6) !important;
+	text-transform: uppercase !important;
+	font-family: var(--bs-font-primary);
+	display: inline-block;
+	color: var(--bs-primary);
+}
+
+[data-bs-theme="dark"] {
+	.preheader {
+		color: var(--bs-white);
+	}
+}
+
+table,
+.table {
+	thead {
+		th {
+			background-color: var(--bs-gray);
+			border-bottom: none;
+			border-top: none;
+		}
+	}
+
+	tbody {
+		tr:first-child td {
+			border-top: none;
+		}
+
+		tr:last-child td {
+			border-bottom: var(--bs-border-width) solid var(--bs-border-color);
+		}
+	}
+
+	caption {
+		font-size: $font-size-sm;
+	}
+}
+
+html:not(.wp-toolbar),
+body:not(.wp-admin) {
+	ul:not(.dropdown-menu) {
+		list-style-type: none;
+		list-style-image: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="2" width="12" height="12" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9.91 12L7 9.09333L4.09 12L3 10.9113L5.91 8.00467L5.90667 8L5.91067 7.996L3 5.08867L4.09 4L7 6.90667L9.91 4L11 5.08867L8.09 7.99533L8.094 8L8.09 8.004L11 10.9113L9.91 12ZM1 14H13V2H1V14Z" fill="%23183153"/></svg>');
+		margin: 0;
+		padding-left: 1.85rem;
+		li {
+			line-height: 1.44;
+			padding: 5px 0 5px 8px;
+		}
+	}
+}
+
+ol.list-styled,
+ul.list-styled {
+	padding-left: calc(1.25 * $spacer);
+
+	ul,
+	ol {
+		list-style-type: none !important;
+		margin-top: calc(0.5 * $spacer);
+		padding-left: calc(2.25 * $spacer);
+	}
+
+	li {
+		margin-bottom: calc(0.5 * $spacer);
+	}
+}
+
+blockquote {
+	border-left: 3px solid var(--bs-primary);
+	padding-left: calc(1.5 * $spacer);
+}
+
+.container {
+	[class$="__content"] {
+		max-width: $content_max_width;
+		z-index: 1;
+	}
+}
+
+[class*="icon-"] {
+	//background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.icon-job-location {
+	background-image: url("../../assets/img/location.svg");
+}
+.icon-job-salary {
+	background-image: url("../../assets/img/salary.svg");
+}
+.icon-job-industry {
+	background-image: url("../../assets/img/industry.svg");
+}
+.icon-job-type {
+	background-image: url("../../assets/img/type.svg");
+}

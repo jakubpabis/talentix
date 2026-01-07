@@ -1,0 +1,23 @@
+@media ( min-width: 782px ) {
+	.interface-complementary-area {
+		width: 320px;
+	}
+
+	.container {
+		max-width: calc( 100vw - 320px - 60px );
+	}
+}
+
+.component[hidden] {
+	display: block !important;
+	opacity: 0.5;
+}
+
+.component[hidden]::before {
+	content: "Block Hidden";
+	display: block;
+	font-size: 20px;
+	font-weight: 900;
+	margin-top: -24px;
+	padding: 0 24px 24px 24px;
+}

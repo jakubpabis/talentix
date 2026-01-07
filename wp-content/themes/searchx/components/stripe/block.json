@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/stripe",
+	"title": "Stripe",
+	"description": "Stripe.",
+	"style": "blennder/stripe",
+	"script": "blennder/stripe",
+	"category": "components",
+	"keywords": [
+		"stripe"
+	],
+	"acf": {
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

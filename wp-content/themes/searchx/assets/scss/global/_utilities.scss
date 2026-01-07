@@ -1,0 +1,32 @@
+.padding-left-dynamic {
+	@include padding-dynamic("left");
+}
+
+.padding-right-dynamic {
+	@include padding-dynamic("right");
+}
+
+.z-1 {
+	z-index: 1;
+}
+
+.line-height-1 {
+	line-height: 1 !important;
+}
+
+.w-33 {
+	width: 33.3333% !important;
+}
+
+[class*="gy-"] {
+	--bs-gutter-y: 1.5rem !important;
+}
+
+.hidden-href {
+	pointer-events: none !important;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}

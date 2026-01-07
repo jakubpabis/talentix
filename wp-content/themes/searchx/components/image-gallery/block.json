@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/image-gallery",
+	"title": "Image Gallery",
+	"description": "A gallery of images selected from the media library.",
+	"style": "blennder/image-gallery",
+	"script": "blennder/image-gallery",
+	"category": "components",
+	"keywords": [
+		"image gallery"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap",
+				"fancybox"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"fancybox",
+				"jquery",
+				"masonry"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

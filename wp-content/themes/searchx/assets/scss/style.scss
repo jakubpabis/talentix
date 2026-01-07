@@ -1,0 +1,39 @@
+@import "@/importer";
+
+/******* Global Styles *******/
+@import "global/**/*.scss";
+
+/******* Global Elements *******/
+@import "elements/**/*.scss";
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+	@media (max-width: 767px) {
+		--bs-gutter-x: 1.5rem;
+		--bs-gutter-y: 0;
+		width: 100%;
+		padding-right: calc(var(--bs-gutter-x) * 0.5);
+		padding-left: calc(var(--bs-gutter-x) * 0.5);
+	}
+}
+
+.row {
+	@media (max-width: 767px) {
+		--bs-gutter-x: 1.5rem;
+		--bs-gutter-y: 0;
+		margin-right: calc(-0.5 * var(--bs-gutter-x));
+		margin-left: calc(-0.5 * var(--bs-gutter-x));
+	}
+}
+
+.row > * {
+	@media (max-width: 767px) {
+		padding-right: calc(var(--bs-gutter-x) * 0.5);
+		padding-left: calc(var(--bs-gutter-x) * 0.5);
+	}
+}

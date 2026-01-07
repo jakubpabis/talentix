@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/tabs",
+	"title": "Tabs",
+	"description": "Toggleable tabs that reveal hidden content.",
+	"style": "blennder/tabs",
+	"script": "blennder/tabs",
+	"category": "components",
+	"keywords": [
+		"tabs"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

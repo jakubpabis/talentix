@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/cards",
+	"title": "Cards",
+	"description": "Small containers that display concise bite-sized content.",
+	"style": "blennder/cards",
+	"script": "blennder/cards",
+	"category": "components",
+	"keywords": [
+		"cards"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap",
+				"swiper"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery",
+				"swiper"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		},
+		"card_group": {
+			"xs": 1,
+			"sm": 1,
+			"md": 2,
+			"lg": 2,
+			"xl": 3,
+			"xxl": 3
+		}
+	}
+}

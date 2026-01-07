@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/text-media",
+	"title": "Text Media",
+	"description": "Display both text and media in a variety of configurations.",
+	"style": "blennder/text-media",
+	"script": "blennder/text-media",
+	"category": "components",
+	"keywords": [
+		"text-media"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap",
+				"fancybox"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery",
+				"fancybox"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		}
+	}
+}

@@ -1,0 +1,107 @@
+@import "@/importer";
+
+.component {
+	overflow: hidden;
+	position: relative;
+	background: transparent;
+	// content-visibility: auto;
+	// contain-intrinsic-size: auto 50vh;
+
+	// &:nth-of-type(1),
+	// &:nth-of-type(2) {
+	// 	content-visibility: visible;
+	// 	contain-intrinsic-size: auto;
+	// }
+
+	&[style*="padding-top"] {
+		@include media-breakpoint-down(lg) {
+			padding-top: $component-py-lg !important;
+		}
+		@include media-breakpoint-down(md) {
+			padding-top: $component-py-md !important;
+		}
+		@include media-breakpoint-down(sm) {
+			padding-top: $component-py-sm !important;
+		}
+	}
+
+	&[style*="padding-bottom"] {
+		@include media-breakpoint-down(lg) {
+			padding-bottom: $component-py-lg !important;
+		}
+		@include media-breakpoint-down(md) {
+			padding-bottom: $component-py-md !important;
+		}
+		@include media-breakpoint-down(sm) {
+			padding-bottom: $component-py-sm !important;
+		}
+	}
+
+	&[style*="padding-top: 0;"] {
+		padding-top: 0 !important;
+	}
+
+	&[style*="padding-bottom: 0;"] {
+		padding-bottom: 0 !important;
+		&:last-of-type {
+			padding-bottom: $component-py-lg !important;
+			@include media-breakpoint-down(lg) {
+				padding-bottom: $component-py-lg !important;
+			}
+			@include media-breakpoint-down(md) {
+				padding-bottom: $component-py-md !important;
+			}
+			@include media-breakpoint-down(sm) {
+				padding-bottom: $component-py-sm !important;
+			}
+		}
+	}
+
+	&[data-bs-theme="light"] {
+		[class*="__content"] {
+			p:not(.preheader) {
+				color: var(--bs-dark);
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+
+	&__header {
+		max-width: $content_max_width;
+		margin-bottom: rem(16);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(32);
+		}
+		&-buttons {
+			.btn {
+				&:first-of-type {
+					margin-right: 2rem;
+				}
+			}
+		}
+	}
+
+	> .container {
+		z-index: 9;
+		position: relative;
+	}
+
+	&__background_2 {
+		position: absolute;
+		right: 0;
+		top: -30%;
+		width: 100%;
+		height: 130%;
+		z-index: 0;
+		display: block;
+		clip-path: polygon(100% 0, 45% 100%, 100% 100%);
+	}
+
+	[class*="__header"] {
+		margin-top: 0;
+	}
+
+	&.archive {
+		background: #fff;
+	}
+}

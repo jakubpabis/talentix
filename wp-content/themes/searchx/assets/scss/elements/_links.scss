@@ -1,0 +1,8 @@
+.wrapped-link {
+	color: inherit;
+	display: flex;
+	flex-direction: column;
+	height: calc( 100% + 2 * #{$spacer} );
+	margin: -#{$spacer};
+	padding: $spacer;
+}

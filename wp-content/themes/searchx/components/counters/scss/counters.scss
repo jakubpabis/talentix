@@ -1,0 +1,78 @@
+/************
+ *
+ * Counters Styles
+ *
+ ***********/
+
+@import "@/importer";
+
+.counters {
+	&__group {
+		justify-content: center;
+	}
+
+	&__card {
+		box-shadow: none;
+		padding: rem(40);
+		text-align: center;
+		position: relative;
+		overflow: visible;
+
+		&:last-of-type {
+			border: none;
+		}
+
+		@include media-breakpoint-up(lg) {
+			border-right: 3px solid;
+		}
+
+		@include media-breakpoint-down(lg) {
+			border-bottom: 1px solid;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding: 20px 40px 20px 20px;
+		}
+	}
+
+	&__header {
+		margin: auto;
+		margin-bottom: rem(20);
+	}
+
+	&__image {
+		height: rem(160);
+		width: rem(160);
+		opacity: 0.2;
+		position: absolute;
+		z-index: -1;
+		top: -20px;
+		left: 50px;
+
+		@include media-breakpoint-down(sm) {
+			height: rem(80);
+			width: rem(80);
+			opacity: 0.5;
+			top: -5px;
+		}
+	}
+
+	&__number {
+		margin-bottom: 0;
+		font-size: rem(96);
+		line-height: 1;
+		font-weight: 800;
+		@include media-breakpoint-down(sm) {
+			font-size: rem(64);
+		}
+	}
+
+	&__title {
+		font-size: rem(24);
+		font-weight: 600;
+		margin-bottom: 0;
+		@include media-breakpoint-down(sm) {
+			margin-top: 10px !important;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+/************
+ *
+ * Scrollable Styles
+ *
+ ***********/
+
+@import "@/importer";
+
+.scrollable {
+	overflow: visible;
+	&__header {
+		word-break: break-all;
+	}
+	&__sticky {
+		&-content {
+			position: sticky !important;
+			top: 8rem;
+		}
+	}
+	&__divider {
+		&-line {
+			height: 100%;
+			width: 1px;
+			background-color: var(--bs-gray-400);
+		}
+	}
+	&__col {
+		&.component__header {
+			margin-bottom: 0;
+		}
+	}
+}

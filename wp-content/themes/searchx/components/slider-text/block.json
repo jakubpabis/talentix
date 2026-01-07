@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/slider-text",
+	"title": "Slider Text",
+	"description": "A presentation of slides containing text.",
+	"style": "blennder/slider-text",
+	"script": "blennder/slider-text",
+	"category": "components",
+	"keywords": [
+		"slider",
+		"text"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		},
+		"carousel_config": {
+			"loop": false,
+			"breakpoints": {
+				"768": {
+					"slidesPerView": 1
+				},
+				"1020": {
+					"slidesPerView": 2
+				}
+			}
+		}
+	}
+}

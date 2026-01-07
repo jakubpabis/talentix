@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/map",
+	"title": "Map",
+	"description": "Embeds a google map. Note: Requires a google maps API key.",
+	"style": "blennder/map",
+	"script": "blennder/map",
+	"category": "components",
+	"keywords": [
+		"map"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		},
+		"query_args": {
+			"post_type": "location",
+			"posts_per_page": 100,
+			"update_post_meta_cache": false,
+			"update_post_term_cache": false
+		}
+	}
+}

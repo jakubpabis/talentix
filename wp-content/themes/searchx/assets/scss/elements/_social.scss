@@ -1,0 +1,79 @@
+/******************
+ *
+ * Social Share
+ *
+ ******************/
+
+.entry-meta {
+	&__author-link {
+		color: var(--bs-primary);
+	}
+
+	&__share-link {
+		color: var(--bs-primary);
+		line-height: 1;
+		font-size: rem(22);
+
+		[class*="fa"] {
+			transition: all ease-out 0.25s;
+		}
+
+		&:hover {
+			[class*="fa"] {
+				transform: translateY(-1px);
+			}
+
+			[class*="facebook"] {
+				color: #0071bb;
+			}
+
+			[class*="twitter"] {
+				color: black;
+			}
+
+			[class*="instagram"] {
+				background: linear-gradient(225deg, #b900b4, #f20407, #ffd521);
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				text-fill-color: transparent;
+			}
+
+			[class*="youtube"] {
+				color: #cc5e5e;
+			}
+
+			[class*="flickr"] {
+				background: linear-gradient(
+					to right,
+					#0062dd 0%,
+					#0062dd 50%,
+					#ff0084 50%,
+					#ff0084 100%
+				);
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				text-fill-color: transparent;
+			}
+
+			[class*="pinterest"] {
+				color: #cc2127;
+			}
+
+			[class*="linkedin"] {
+				color: #0378b6;
+			}
+
+			[class*="google-plus"] {
+				color: #cc2127;
+			}
+		}
+	}
+
+	.spacer {
+		display: block;
+		position: relative;
+		width: 1px;
+		height: var(--bs-font-size-h5);
+		background-color: var(--bs-gray-400);
+	}
+}

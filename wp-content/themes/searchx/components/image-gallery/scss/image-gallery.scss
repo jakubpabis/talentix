@@ -1,0 +1,89 @@
+/************
+ *
+ * Image Gallery Styles
+ *
+ ***********/
+
+@use 'sass:math';
+
+@import '@/importer';
+
+.image-gallery {
+	img {
+		object-fit: cover;
+		box-shadow: var( --bs-box-shadow );
+		border-radius: var( --bs-border-radius );
+		height: 100%;
+	}
+
+	.gallery-item {
+		.gallery-icon {
+			height: 100%;
+
+			a {
+				height: 100%;
+			}
+		}
+	}
+
+	&--masonry {
+		.grid-gutter {
+			width: calc( 0.25 * $grid-gutter-width );
+			@include media-breakpoint-up(md) {
+				width: calc( 0.5 * $grid-gutter-width );
+			}
+		}
+
+		.grid-item {
+			@include gallery-overlay;
+
+			width: calc( 50% - ( $grid-gutter-width / 8 ) );
+			margin-bottom: calc( 0.25 * $grid-gutter-width );
+			@include media-breakpoint-up(md) {
+				width: calc( 50% - ( $grid-gutter-width / 4 ) );
+				margin-bottom: calc( 0.5 * $grid-gutter-width );
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	&--grid {
+		.gallery-icon {
+			@include gallery-overlay;
+		}
+	}
+
+	&--carousel-full {
+		.swiper {
+			.swiper-slide {
+				a {
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	&--carousel-split {
+		.swiper {
+			.swiper-slide {
+				a {
+					height: 100%;
+				}
+			}
+		}
+
+		.image-gallery__col {
+			@include media-breakpoint-up(md){
+				flex-basis: 50%;
+				max-width: 75%;
+
+				&.component__header {
+					max-width: 25%;
+				}
+			}
+		}
+	}
+}

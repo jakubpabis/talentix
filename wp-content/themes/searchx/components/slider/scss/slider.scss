@@ -1,0 +1,122 @@
+/************
+ *
+ * Slider Styles
+ *
+ ***********/
+
+@import "@/importer";
+
+.slider {
+	.swiper-slide {
+		position: relative;
+		color: var(--bs-light);
+		padding: 0;
+		height: auto;
+		transform: scale(0.85);
+		opacity: 0.75;
+		transition: all 300ms ease-in-out;
+
+		&.swiper-slide-active {
+			transform: scale(1);
+			opacity: 1;
+		}
+
+		.slide__image-wrapper {
+			position: relative;
+			padding: 1rem;
+			&:before {
+				position: absolute;
+				top: 2rem;
+				right: 0;
+				bottom: 0;
+				left: 2rem;
+				content: "";
+				background-color: var(--bs-primary);
+				z-index: -9;
+			}
+		}
+
+		.slider__video-pause {
+			width: 72px;
+			height: 72px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -36px;
+			margin-left: -36px;
+			&.re-position {
+				top: 72px;
+				left: calc(100% - 72px);
+			}
+		}
+
+		.slide__content {
+			text-shadow: 0px 0px 3px black;
+			z-index: 3;
+			position: relative;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+
+			@include media-breakpoint-up(md) {
+				width: 50%;
+				margin: auto;
+			}
+
+			.preheader {
+				font-size: $h5-font-size;
+				font-weight: $font-weight-bold;
+			}
+		}
+
+		&.slide__contained {
+			.slide__content {
+				color: var(--bs-dark);
+				text-align: left;
+				height: auto;
+				margin-bottom: 2rem;
+			}
+
+			.slide__image-wrapper {
+				position: relative;
+
+				&.slide-overlay::before {
+					content: none;
+				}
+			}
+		}
+
+		.slide__image-wrapper:not(.is_video) {
+			@include cover();
+			border-radius: var(--bs-border-radius);
+			overflow: hidden;
+
+			&.slide-overlay::before {
+				content: "";
+				z-index: 1;
+				opacity: 0.5;
+				background-color: var(--bs-black);
+				border-radius: var(--bs-border-radius);
+				@include cover();
+			}
+
+			.slide__image {
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+
+	&[data-bs-theme="dark"] {
+		.swiper-slide {
+			&.slide__contained {
+				.slide__content {
+					color: var(--bs-light);
+				}
+			}
+		}
+	}
+}

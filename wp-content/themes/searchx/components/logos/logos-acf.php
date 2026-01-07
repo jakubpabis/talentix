@@ -1,0 +1,68 @@
+<?php
+
+return array(
+	'key' => 'group_5b74333ef40a012',
+	'title' => 'Logos',
+	'fields' => array(
+		array(
+			'key' => 'field_5badg9834196d8f',
+			'label' => 'Logos',
+			'name' => 'logos',
+			'type' => 'repeater',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'collapsed' => 'field_5b74335696d91',
+			'min' => 0,
+			'max' => 0,
+			'layout' => 'block',
+			'button_label' => 'Add Card',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_5cdcadgkjkhba131',
+					'label' => 'Logo Image',
+					'name' => 'logo_image',
+					'type' => 'image',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'preview_size' => 'thumbnail',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+				array(
+					'key' => 'field_5clkj98yba132',
+					'label' => 'Logo Link',
+					'name' => 'logo_link',
+					'type' => 'link',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+				),
+			),
+		),
+	),
+);

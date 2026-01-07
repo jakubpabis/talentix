@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "acf/testimonials",
+	"title": "Testimonials",
+	"description": "This block is populated with posts from the 'Testimonials' CPT.",
+	"style": "blennder/testimonials",
+	"script": "blennder/testimonials",
+	"category": "components",
+	"keywords": [
+		"testimonials"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "component_render_callback"
+	},
+	"blennder": {
+		"dependencies": {
+			"css": [
+				"aos",
+				"bootstrap"
+			],
+			"js": [
+				"aos",
+				"bootstrap",
+				"jquery"
+			]
+		},
+		"styleGuide": {
+			"description": ""
+		},
+		"query_args": {
+			"post_type": "testimonials"
+		},
+		"carousel_config": {
+			"breakpoints": {
+				"768": {
+					"slidesPerView": 2
+				},
+				"1020": {
+					"slidesPerView": 3
+				},
+				"1200": {
+					"slidesPerView": 4
+				}
+			}
+		}
+	}
+}

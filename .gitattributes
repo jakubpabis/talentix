@@ -1,0 +1,5 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+wp-content/themes/blennder/dist/css/style.css merge=ours
+wp-content/themes/blennder/dist/js/scripts.js merge=ours

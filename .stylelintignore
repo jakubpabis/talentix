@@ -1,0 +1,7 @@
+/*
+!wp-content/
+wp-content/*
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/blennder/
+wp-content/themes/blennder/assets/fonts/*
