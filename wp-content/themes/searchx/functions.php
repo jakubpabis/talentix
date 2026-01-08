@@ -6,14 +6,12 @@
 
 
 declare(strict_types=1);
-define("THEME_VERSION", "1.4.7");
+define("THEME_VERSION", "1.0.1");
 
 // Prevent direct access
 if (!defined('ABSPATH')) {
 	exit;
 }
-
-require_once('vendor/autoload.php');
 
 use App\Setup\ACF;
 use App\Setup\Analytics;
@@ -23,12 +21,12 @@ use App\Setup\Scripts;
 use App\Setup\Support;
 
 use App\PostTypes\GlobalComponent;
-use App\PostTypes\Jobs;
+// use App\PostTypes\Jobs;
 use App\PostTypes\Testimonials;
 use App\PostTypes\Team;
 //use App\PostTypes\SEO;
-use App\PostTypes\Werken;
-use App\PostTypes\Prospect;
+// use App\PostTypes\Werken;
+// use App\PostTypes\Prospect;
 
 // Bail if ACF Pro is not installed
 include_once ABSPATH . "wp-admin/includes/plugin.php";
@@ -76,10 +74,10 @@ add_action("after_setup_theme", [new Support(), "after_setup_theme"]);
 new GlobalComponent();
 new Testimonials();
 new Team();
-new Jobs();
+// new Jobs();
 //new SEO();
-new Werken();
-new Prospect();
+// new Werken();
+// new Prospect();
 
 /**
  * Set up Gutenberg
@@ -90,7 +88,7 @@ $gutenberg->init();
 /**
  * Include Cron Job
  */
-require_once __DIR__ . "/inc/jobs-cron.php";
+// require_once __DIR__ . "/inc/jobs-cron.php";
 
 /**
  * Include Header Functions
@@ -224,7 +222,7 @@ function custom_hierarchical_post_permalink($permalink, $post, $leavename)
 	return str_replace('%category%', $full_category_path, $permalink);
 }
 
-require_once __DIR__ . "/inc/jobs-functions.php";
+// require_once __DIR__ . "/inc/jobs-functions.php";
 
 function search_by_title_only($search, $wp_query)
 {

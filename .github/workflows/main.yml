@@ -20,7 +20,7 @@ jobs:
       - name: Sync
         env:
           src: './wp-content/themes/searchx/'
-          dest: 'sea0005@194.164.204.130:~/httpdocs/newsite/wp-content/themes/searchx'
+          dest: 'talentix.searchxrecru_5ubyjrxiny@194.164.204.130:~/httpdocs/wp-content/themes/searchx'
         run: |
           echo "${{secrets.SSH_DEPLOY_KEY}}" > deploy_key
           chmod 600 ./deploy_key

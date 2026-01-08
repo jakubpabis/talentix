@@ -15,15 +15,14 @@
 	// --switch: calc((var(--light) - var(--threshold)) * -100%);
 	// color: hsl(0, 0%, var(--switch));
 	line-height: 1;
-	text-transform: uppercase;
 
-	@include media-breakpoint-down(md) {
-		font-size: 0.9rem !important;
-		padding-top: 0.8rem !important;
-		padding-bottom: 0.7rem !important;
-		padding-left: 1rem !important;
-		padding-right: 1rem !important;
-	}
+	// @include media-breakpoint-down(md) {
+	// 	font-size: 0.9rem !important;
+	// 	padding-top: 0.8rem !important;
+	// 	padding-bottom: 0.7rem !important;
+	// 	padding-left: 1rem !important;
+	// 	padding-right: 1rem !important;
+	// }
 
 	i {
 		transition: all 0.2s ease-in-out;
@@ -47,13 +46,13 @@
 	}
 
 	&-sm {
-		@include media-breakpoint-down(xxl) {
-			padding-top: 0.6rem !important;
-			padding-bottom: 0.5rem !important;
-			padding-left: 1rem !important;
-			padding-right: 1rem !important;
-			font-size: 0.75rem !important;
-		}
+		// @include media-breakpoint-down(xxl) {
+		// 	padding-top: 0.6rem !important;
+		// 	padding-bottom: 0.5rem !important;
+		// 	padding-left: 1rem !important;
+		// 	padding-right: 1rem !important;
+		// 	font-size: 0.75rem !important;
+		// }
 		@include media-breakpoint-down(md) {
 			font-size: 0.7rem !important;
 		}
@@ -85,7 +84,7 @@
 
 	&-secondary {
 		@include set-btn-colors(var(--bs-secondary));
-		color: var(--bs-primary);
+		color: var(--bs-light);
 	}
 
 	&-outline-secondary {
