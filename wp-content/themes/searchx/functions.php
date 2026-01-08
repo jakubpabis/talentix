@@ -428,3 +428,9 @@ add_action('acf/include_fields', function () {
 		'show_in_rest' => 0,
 	));
 });
+
+function talentix_hide_admin_bar()
+{
+	return false;
+}
+add_filter('show_admin_bar', 'talentix_hide_admin_bar');
