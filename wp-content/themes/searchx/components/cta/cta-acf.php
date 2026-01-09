@@ -35,12 +35,7 @@ return array(
 			'type' => 'forms',
 			'instructions' => 'Choose a created Gravity Forms form in the list below.',
 			'required' => 0,
-			'conditional_logic' => acf_block_conditional_logic('cta', ['cta-form-right', 'cta-form-left', 'cta-form-stacked']),
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
+			'conditional_logic' => 0,
 			'return_format' => 'post_object',
 			'allow_null' => 0,
 			'multiple' => 0,
