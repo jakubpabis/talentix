@@ -21,7 +21,7 @@
 					$cta_form = get_has_field('cta_form', []);
 					if (is_array($cta_form)) {
 						$form_id = get_has_field('id', 0, $cta_form);
-						gravity_form($form_id, true, true, false, false, true);
+						gravity_form($form_id, false, false, false, false, true);
 					} else {
 						echo '<p>No Form Chosen</p>';
 					}
