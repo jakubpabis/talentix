@@ -59,9 +59,9 @@
 					<?php endif; ?>
 
 				</div>
-				<div class="footer__col col-lg-6 col-12 order-lg-2 order-3 col-12 pt-lg-12 pt-md-16 pt-12">
-					<span class="lead fw-semibold text-white text-uppercase">&nbsp;</span>
-					<div class="mt-8">
+				<div class="footer__col col-lg-6 col-12 order-lg-2 order-3 col-12 pt-lg-12 pt-md-8 pt-12">
+					<span class="lead fw-semibold text-white text-uppercase d-lg-block d-none">&nbsp;</span>
+					<div class="mt-lg-8">
 						<p>
 							<strong>KVK:</strong> 97710849<br />
 							<strong>BTW:</strong> NL868195960B01<br />

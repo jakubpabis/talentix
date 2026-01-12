@@ -29,7 +29,7 @@ return array(
 			'mime_types' => '.jpg, .jpeg, .webp, .svg, .png, .gif',
 		),
 		array(
-			'key' => 'field_b8kb8k5alksdjngc6f8c5',
+			'key' => 'field_b8kb8k5alksdjngdc6f8c5',
 			'label' => 'Form',
 			'name' => 'cta_form',
 			'type' => 'forms',

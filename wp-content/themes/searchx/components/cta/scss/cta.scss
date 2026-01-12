@@ -122,6 +122,8 @@
 	}
 
 	&__form {
+		width: 100%;
+		display: block;
 		input,
 		textarea,
 		select {
