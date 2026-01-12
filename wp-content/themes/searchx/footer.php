@@ -32,7 +32,7 @@
 						?>
 					</ul>
 				</div>
-				<div class="footer__col col-lg-3 col-sm-6 order-lg-1 pt-lg-12 pt-md-16 pt-12">
+				<div class="footer__col col-lg-4 col-sm-6 order-lg-1 pt-lg-12 pt-md-16 pt-12">
 					<span class="lead fw-semibold text-white text-uppercase">Office</span>
 					<?php echo get_has_theme_option('address', '') ? '<div class="d-flex mt-8"><i class="fa-solid fa-location-dot me-3"></i><div>' . get_has_theme_option('address', '') . '</div></div>' : ''; ?>
 					<?php echo get_has_theme_option('address_2', '') ? '<div class="d-flex mt-8"><i class="fa-solid fa-location-dot me-3"></i><div>' . get_has_theme_option('address_2', '') . '</div></div>' : ''; ?>
@@ -57,6 +57,10 @@
 							</div>
 						</div>
 					<?php endif; ?>
+
+				</div>
+				<div class="footer__col col-lg-6 col-12 order-lg-2 order-3 col-12 pt-lg-12 pt-md-16 pt-12">
+					<span class="lead fw-semibold text-white text-uppercase">&nbsp;</span>
 					<div class="mt-8">
 						<p>
 							<strong>KVK:</strong> 97710849<br />
@@ -64,8 +68,6 @@
 							<strong>BANK:</strong> NL48BUNQ2157351272
 						</p>
 					</div>
-				</div>
-				<div class="footer__col col-lg-6 col-12 order-lg-2 order-3 col-12 pt-lg-12 pt-md-16 pt-12">
 					<div class="d-none d-sm-block">
 						<?php
 						wp_nav_menu(array(
