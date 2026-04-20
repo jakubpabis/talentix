@@ -6,7 +6,7 @@
 
 
 declare(strict_types=1);
-define("THEME_VERSION", "1.0.2");
+define("THEME_VERSION", "1.0.3");
 
 // Prevent direct access
 if (!defined('ABSPATH')) {
