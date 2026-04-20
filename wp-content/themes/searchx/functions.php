@@ -125,102 +125,102 @@ require_once __DIR__ . "/inc/acf-functions.php";
  */
 require_once __DIR__ . "/inc/custom-styling.php";
 
-// Prevent accessing posts with incomplete category hierarchy
-add_filter('template_redirect', 'enforce_full_category_hierarchy');
-function enforce_full_category_hierarchy()
-{
-	if (is_single()) {
-		global $post, $wp_query;
+// // Prevent accessing posts with incomplete category hierarchy
+// add_filter('template_redirect', 'enforce_full_category_hierarchy');
+// function enforce_full_category_hierarchy()
+// {
+// 	if (is_single()) {
+// 		global $post, $wp_query;
 
-		// Get the current category path from the request
-		$current_category_path = get_query_var('category_name');
+// 		// Get the current category path from the request
+// 		$current_category_path = get_query_var('category_name');
 
-		// Get all categories for the current post
-		$post_categories = get_the_terms($post->ID, 'category');
+// 		// Get all categories for the current post
+// 		$post_categories = get_the_terms($post->ID, 'category');
 
-		if ($post_categories) {
-			$is_valid_path = false;
+// 		if ($post_categories) {
+// 			$is_valid_path = false;
 
-			foreach ($post_categories as $category) {
-				// Build full category path for this category
-				$full_category_path = '';
-				$current_cat = $category;
-				$category_slugs = [];
+// 			foreach ($post_categories as $category) {
+// 				// Build full category path for this category
+// 				$full_category_path = '';
+// 				$current_cat = $category;
+// 				$category_slugs = [];
 
-				while ($current_cat) {
-					$category_slugs[] = $current_cat->slug;
-					if ($current_cat->parent == 0) break;
-					$current_cat = get_term($current_cat->parent, 'category');
-				}
+// 				while ($current_cat) {
+// 					$category_slugs[] = $current_cat->slug;
+// 					if ($current_cat->parent == 0) break;
+// 					$current_cat = get_term($current_cat->parent, 'category');
+// 				}
 
-				$full_category_path = implode('/', array_reverse($category_slugs));
+// 				$full_category_path = implode('/', array_reverse($category_slugs));
 
-				// Check if the requested path matches the full category path
-				if ($full_category_path === $current_category_path) {
-					$is_valid_path = true;
-					break;
-				}
-			}
+// 				// Check if the requested path matches the full category path
+// 				if ($full_category_path === $current_category_path) {
+// 					$is_valid_path = true;
+// 					break;
+// 				}
+// 			}
 
-			// If no valid path is found, return a 404
-			if (!$is_valid_path) {
-				$wp_query->set_404();
-				status_header(404);
-				include(get_query_template('404'));
-				exit;
-			}
-		}
-	}
-}
+// 			// If no valid path is found, return a 404
+// 			if (!$is_valid_path) {
+// 				$wp_query->set_404();
+// 				status_header(404);
+// 				include(get_query_template('404'));
+// 				exit;
+// 			}
+// 		}
+// 	}
+// }
 
-// Modify permalink to include full category hierarchy
-add_filter('post_link', 'custom_hierarchical_post_permalink', 10, 3);
-function custom_hierarchical_post_permalink($permalink, $post, $leavename)
-{
-	$categories = get_the_terms($post->ID, 'category');
+// // Modify permalink to include full category hierarchy
+// add_filter('post_link', 'custom_hierarchical_post_permalink', 10, 3);
+// function custom_hierarchical_post_permalink($permalink, $post, $leavename)
+// {
+// 	$categories = get_the_terms($post->ID, 'category');
 
-	if (!$categories) {
-		return $permalink;
-	}
+// 	if (!$categories) {
+// 		return $permalink;
+// 	}
 
-	// Find the most nested category
-	$deepest_category = null;
-	$max_depth = 0;
+// 	// Find the most nested category
+// 	$deepest_category = null;
+// 	$max_depth = 0;
 
-	foreach ($categories as $category) {
-		$depth = 0;
-		$current = $category;
+// 	foreach ($categories as $category) {
+// 		$depth = 0;
+// 		$current = $category;
 
-		while ($current->parent != 0) {
-			$depth++;
-			$current = get_term($current->parent, 'category');
-		}
+// 		while ($current->parent != 0) {
+// 			$depth++;
+// 			$current = get_term($current->parent, 'category');
+// 		}
 
-		if ($depth > $max_depth) {
-			$max_depth = $depth;
-			$deepest_category = $category;
-		}
-	}
+// 		if ($depth > $max_depth) {
+// 			$max_depth = $depth;
+// 			$deepest_category = $category;
+// 		}
+// 	}
 
-	if (!$deepest_category) {
-		$deepest_category = reset($categories);
-	}
+// 	if (!$deepest_category) {
+// 		$deepest_category = reset($categories);
+// 	}
 
-	// Build full category path
-	$full_category_path = '';
-	$current = $deepest_category;
-	$category_slugs = [];
+// 	// Build full category path
+// 	$full_category_path = '';
+// 	$current = $deepest_category;
+// 	$category_slugs = [];
 
-	while ($current) {
-		$category_slugs[] = $current->slug;
-		if ($current->parent == 0) break;
-		$current = get_term($current->parent, 'category');
-	}
+// 	while ($current) {
+// 		$category_slugs[] = $current->slug;
+// 		if ($current->parent == 0) break;
+// 		$current = get_term($current->parent, 'category');
+// 	}
 
-	$full_category_path = implode('/', array_reverse($category_slugs));
+// 	$full_category_path = implode('/', array_reverse($category_slugs));
 
-	return str_replace('%category%', $full_category_path, $permalink);
-}
+// 	return str_replace('%category%', $full_category_path, $permalink);
+// }
 
 // require_once __DIR__ . "/inc/jobs-functions.php";
 
