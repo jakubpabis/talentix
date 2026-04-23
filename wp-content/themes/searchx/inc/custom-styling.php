@@ -109,7 +109,7 @@ function getContrastColor($hexColor)
 	}
 }
 
-function root_vars()
+function root_vars($scope = null)
 {
 
 	$roots_fonts_family = array(
@@ -187,7 +187,8 @@ function root_vars()
 		'button_padding_x' => 'padding-x',
 	];
 
-	$style = ":root, [data-bs-theme=light], [data-bs-theme=dark], body { ";
+	$selector = $scope ? $scope : ':root, [data-bs-theme=light], [data-bs-theme=dark], body';
+	$style = $selector . " { ";
 
 	foreach ($roots_fonts_family as $key => $value) {
 		if (!empty(get_field($value, "options"))) {
@@ -270,7 +271,7 @@ function component_styling()
 	return $style;
 }
 
-function button_styling()
+function button_styling($scope = null)
 {
 	$sizes = [
 		'md',
@@ -286,10 +287,17 @@ function button_styling()
 		'button_radius' => 'border-radius',
 	];
 
+	$prefix = $scope ? $scope . ' ' : '';
 	$style = '';
 
 	foreach ($sizes as $size) {
-		$style .= $size === 'md' ? '.btn, body input, html input { ' : '.btn-' . $size . '{ ';
+		if ($size === 'md') {
+			$style .= $scope
+				? $prefix . '.btn, ' . $prefix . 'input { '
+				: '.btn, body input, html input { ';
+		} else {
+			$style .= $prefix . '.btn-' . $size . '{ ';
+		}
 		foreach ($properties as $property => $name) {
 			$field = $property . '_' . $size;
 			if (!empty(get_field($field, "options"))) {
@@ -317,7 +325,7 @@ function button_styling()
 	return $style;
 }
 
-function cards_styling()
+function cards_styling($scope = null)
 {
 
 	$properties = [
@@ -327,9 +335,10 @@ function cards_styling()
 		'cards_radius' => 'border-radius',
 	];
 
+	$prefix = $scope ? $scope . ' ' : '';
 	$style = '';
 
-	$style .= '.card { ';
+	$style .= $prefix . '.card { ';
 	foreach ($properties as $property => $name) {
 		if (!empty(get_field($property, "options"))) {
 			if ($property === 'cards_radius') {
@@ -341,7 +350,7 @@ function cards_styling()
 	}
 	$style .= ' }';
 
-	$style .= '.card-body { ';
+	$style .= $prefix . '.card-body { ';
 	foreach ($properties as $property => $name) {
 		if (!empty(get_field($property, "options"))) {
 			if ($property === 'cards_padding_y') {
@@ -372,7 +381,7 @@ function cards_styling()
 	$style .= ' }';
 
 
-	$style .= '.accordions__btn { ';
+	$style .= $prefix . '.accordions__btn { ';
 	$style .= '
 		border-bottom-width: ' . get_has_theme_option('accordion_border_b', '0') . 'px;
 		border-radius: ' . get_has_theme_option('border_' . get_field('accordion_radius', "options"), "options") . 'px;
@@ -388,7 +397,7 @@ function cards_styling()
 		}
 	';
 	$style .= ' }';
-	$style .= '.accordions__body { ';
+	$style .= $prefix . '.accordions__body { ';
 	$style .= '
 		padding-left: ' . get_has_theme_option('accordion_padding_x', '0') / 16 . 'rem!important;
 		padding-right: ' . get_has_theme_option('accordion_padding_x', '0') / 16 . 'rem!important;
@@ -403,7 +412,7 @@ function cards_styling()
 	';
 	$style .= ' }';
 
-	$style .= '.g-4 {  ';
+	$style .= $prefix . '.g-4 {  ';
 	foreach ($properties as $property => $name) {
 		if (!empty(get_field($property, "options"))) {
 			if ($property === 'cards_gutter') {
@@ -436,17 +445,22 @@ function output_custom_fonts()
 	}
 }
 
-function output_custom_styles()
+function output_custom_styles($scope = null)
 {
 	$styles = '<style type="text/css">';
-	$styles .= root_vars();
+	$styles .= root_vars($scope);
 	// $styles .= component_styling();
-	$styles .= button_styling();
-	$styles .= cards_styling();
+	$styles .= button_styling($scope);
+	$styles .= cards_styling($scope);
 	$styles .= "</style>";
 
 	echo $styles;
 }
+
+add_action('admin_head', 'output_custom_fonts');
+add_action('admin_head', function () {
+	output_custom_styles('.editor-visual-editor');
+});
 
 function output_logo_header()
 {

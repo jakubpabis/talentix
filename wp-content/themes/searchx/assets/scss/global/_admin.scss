@@ -17,14 +17,14 @@
 		label {
 			display: block;
 
-			input[type='text'],
-			input[type='search'] {
+			input[type="text"],
+			input[type="search"] {
 				display: inline-block;
 			}
 		}
 	}
 
-	input[type='submit'] {
+	input[type="submit"] {
 		color: black;
 	}
 
@@ -32,5 +32,17 @@
 		.query-results {
 			top: 240px;
 		}
+	}
+}
+
+.editor-visual-editor {
+	padding: 0 rem(30);
+	background-color: white;
+}
+
+.post-type-post {
+	.editor-visual-editor {
+		max-width: rem(1000);
+		margin: 0 auto;
 	}
 }
