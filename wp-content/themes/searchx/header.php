@@ -134,14 +134,6 @@ $body_class = $showbar_cookie ? ' header-cta-bar-showed' : '';
 			<div class="mobile-social d-none">
 				<?php social_media_icons(); ?>
 			</div>
-			<?php $curr_lang = pll_current_language(); ?>
-			<?php if (get_has_theme_option('cv_upload_form_' . $curr_lang, '')): ?>
-
-				<button class="btn btn-sm btn-tertiary d-flex align-items-center py-md-2 ms-lg-6" data-bs-toggle="modal" data-bs-target="#uploadCVModal">
-					<span class="mt-1 fw-semibold"><?php pll_e('Upload CV'); ?></span><i class="fa-lg fa-regular fa-folder-arrow-up"></i>
-				</button>
-
-			<?php endif; ?>
 			<button class="mobile-menu-button" title="Mobile Menu">
 				<div class="bar"></div>
 				<div class="bar"></div>
