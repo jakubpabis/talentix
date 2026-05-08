@@ -1,4 +1,4 @@
-name: Kinsta Master Deployment
+name: HOSTINGER Master Deployment
 
 on:
   push:
@@ -20,12 +20,12 @@ jobs:
       - name: Sync
         env:
           src: './wp-content/themes/searchx/'
-          dest: 'talentix.searchxrecru_5ubyjrxiny@194.164.204.130:~/httpdocs/wp-content/themes/searchx'
+          dest: 'u138202290@76.13.158.10:~/domains/talentix.ai/public_html/wp-content/themes/searchx'
         run: |
           echo "${{secrets.SSH_DEPLOY_KEY}}" > deploy_key
           chmod 600 ./deploy_key
           rsync -chav --omit-dir-times \
-            -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
+            -e 'ssh -p 65002 -i ./deploy_key -o StrictHostKeyChecking=no' \
             --exclude /deploy_key \
             --exclude /.git/ \
             --exclude /.github/ \
